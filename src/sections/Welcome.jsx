@@ -1,5 +1,5 @@
 import CardItem from '../components/CardItem'
-import CardDescription from '../components/CardDescription'
+import CardData from '../data/CardData' 
 
 const commonStyles =
 	'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white'
@@ -33,12 +33,15 @@ const Welcome = () => {
 					</div>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start max-[640px]:w-96 w-full mf:mt-0 mf:ml-20 mt-10'>
-					<CardItem title='title' />
-					<CardDescription />
-					<CardItem title='title' />
-					<CardDescription />
-					<CardItem title='title' />
-					<CardDescription />
+					{CardData.map((id, title) => (
+						<CardItem
+							key={id + title}
+							title={id.title}
+							text={id.text}
+							gitHandle={id.gitHandle}
+							webHandle={id.webHandle}
+						/>
+					))}
 				</div>
 			</div>
 		</div>
