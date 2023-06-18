@@ -11,7 +11,7 @@ const Navbar = () => {
 
 	return (
 		<nav className='w-full flex md:justify-center justify-between items-center p-4'>
-			<div className='md:flex-[0.5] flex-initial justify-center items-center'>
+			<div className='md:flex-[0.8] 2xl:flex-[0.5] flex-initial justify-center items-center'>
 				<p className='w-32 cursor-pointer text-white'>Logo section</p>
 			</div>
 			<ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
@@ -35,8 +35,8 @@ const Navbar = () => {
 					/>
 				)}
 				{toggleMenu && (
-					<ul className='z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none flex flex-col justify-start items-end rounded-md text-white bg-black'>
-						<li className='text-xl self-start p-3 my-2 cursor-pointer'>
+					<ul className='z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none flex flex-col justify-start items-end rounded-md text-white bg-black animate-slide-in'>
+						<li className='text-xl self-start my-2 cursor-pointer'>
 							<AiOutlineClose fontSize={28} onClick={() => setToggleMenu(false)} />
 						</li>
 						{['Item', 'Item', 'Item'].map((item, index) => (
