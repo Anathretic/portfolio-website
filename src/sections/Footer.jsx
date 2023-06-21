@@ -11,10 +11,10 @@ const Footer = () => {
 				<p className='text-sm text-center mf:text-base'>&copy; {currentYear} Test Title</p>
 				<div className='flex flex-end '>
 					<a className='cursor-pointer mr-8' href='https://github.com/' target='_blank' rel='noreferrer'>
-						<BsGithub fontSize={22} className='hover:text-red-800 transition duration-300' />
+						<BsGithub fontSize={22} className='hover:text-red-500 transition duration-300' />
 					</a>
 					<a className='cursor-pointer' href='https://pl.linkedin.com/' target='_blank' rel='noreferrer'>
-						<BsLinkedin fontSize={22} className='hover:text-red-800 transition duration-300' />
+						<BsLinkedin fontSize={22} className='hover:text-red-500 transition duration-300' />
 					</a>
 				</div>
 			</div>

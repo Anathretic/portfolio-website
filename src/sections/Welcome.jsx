@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import CardItem from '../components/CardItem'
 import CardData from '../data/CardData'
 
@@ -5,8 +6,6 @@ const commonStyles =
 	'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white'
 
 const Welcome = () => {
-	const contactButton = () => {}
-
 	return (
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4'>
@@ -17,12 +16,11 @@ const Welcome = () => {
 					<p className='text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</p>
-					<button
-						type='button'
-						onClick={contactButton}
+					<Link
+						to='/contact'
 						className='flex flex-row justify-center items-center my-5 bg-[#b91c1c] p-3 w-full rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'>
 						<p className='text-white text-base'>Contact</p>
-					</button>
+					</Link>
 					<div className='grid grid-cols-2 w-full mt-10'>
 						<div className={`rounded-tl-2xl ${commonStyles}`}>Ability</div>
 						<div className={`${commonStyles} rounded-tr-2xl`}>Ability</div>
