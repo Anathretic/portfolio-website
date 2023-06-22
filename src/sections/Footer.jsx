@@ -1,8 +1,7 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 const Footer = () => {
-
-    const currentYear = new Date().getFullYear()
+	const currentYear = new Date().getFullYear()
 
 	return (
 		<div className='w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer text-white'>
@@ -10,11 +9,19 @@ const Footer = () => {
 			<div className='sm:w-[90%] w-full flex justify-between items-center my-5'>
 				<p className='text-sm text-center mf:text-base'>&copy; {currentYear} Test Title</p>
 				<div className='flex flex-end '>
-					<a className='cursor-pointer mr-8' href='https://github.com/' target='_blank' rel='noreferrer'>
-						<BsGithub fontSize={22} className='hover:text-red-500 transition duration-300' />
+					<a
+						className='cursor-pointer mr-8 p-1 hover:text-red-500 transition duration-300'
+						href='https://github.com/'
+						target='_blank'
+						rel='noreferrer'>
+						<BsGithub fontSize={22} />
 					</a>
-					<a className='cursor-pointer' href='https://pl.linkedin.com/' target='_blank' rel='noreferrer'>
-						<BsLinkedin fontSize={22} className='hover:text-red-500 transition duration-300' />
+					<a
+						className='cursor-pointer p-1 hover:text-red-500 transition duration-300'
+						href='https://pl.linkedin.com/'
+						target='_blank'
+						rel='noreferrer'>
+						<BsLinkedin fontSize={22} />
 					</a>
 				</div>
 			</div>
