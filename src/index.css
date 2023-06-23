@@ -69,11 +69,26 @@ nav {
 
 .gradient-bg-footer {
 	background-color: #0f0e13;
-	background-image: 
-	  radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 50%), 
-	  radial-gradient(at 50% 0%, hsla(225,39%,25%,1) 0, transparent 50%);
-  }
+	background-image: radial-gradient(at 0% 100%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+		radial-gradient(at 50% 0%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
+}
 
 .active {
 	color: rgb(239 68 68);
+}
+
+form span {
+	display: none;
+	padding: 3px;
+	color: rgb(239 68 68);
+}
+
+form input:invalid[focused='true'] ~ span,
+form textarea:invalid[focused='true'] ~ span {
+	display: block;
+}
+
+form input:invalid[focused='true'],
+form textarea:invalid[focused='true'] {
+	border: 1px solid rgb(239 68 68);
 }

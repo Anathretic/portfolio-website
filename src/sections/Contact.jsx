@@ -1,9 +1,36 @@
-import { Link } from 'react-router-dom'
-
-const inputStyles =
-	'my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism'
+import { useState } from 'react'
+import InputData from '../data/InputData'
+import TextInputData from '../data/TextInputData'
+import { FormInput, TextInput } from '../components/Inputs'
 
 const Contact = () => {
+	const [focused, setFocused] = useState(false)
+	const [values, setValues] = useState({
+		username: '',
+		email: '',
+		subject: '',
+	})
+
+	const [textValue, setTextValue] = useState({
+		message: '',
+	})
+
+	const handleSubmit = e => {
+		e.preventDefault()
+
+		setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
+		setFocused(false)
+	}
+
+	const onChange = e => {
+		setValues({ ...values, [e.target.name]: e.target.value })
+		setTextValue({ ...textValue, [e.target.name]: e.target.value })
+	}
+
+	const handleFocus = () => {
+		setFocused(true)
+	}
+
 	return (
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4'>
@@ -18,28 +45,42 @@ const Contact = () => {
 					</p>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-20 mt-10'>
-					<form className='px-5 py-2 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism mt-10'>
+					<form
+						onSubmit={handleSubmit}
+						className='px-5 py-2 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism mt-10'>
 						<h2 className='p-5 text-2xl text-white text-gradient'>Write to us!</h2>
 
-						<div className='h-[1px] w-full bg-gray-400' />
+						<div className='h-[1px] w-full bg-gray-400 my-1' />
 
-						<label className='text-white mt-5'>Name:</label>
-						<input className={`${inputStyles}`} placeholder='Name..' name='name' type='text' />
-						<label className='text-white mt-5'>E-mail:</label>
-						<input className={`${inputStyles}`} placeholder='E-mail..' name='e-mail' type='text' />
-						<label className='text-white mt-5'>Message:</label>
-						<textarea
-							className={`min-h-[96px] max-h-[256px] ${inputStyles} mb-5`}
-							placeholder='Your message..'
-							name='message'></textarea>
+						{InputData.map(input => (
+							<FormInput
+								key={input.id}
+								{...input}
+								value={values[input.name]}
+								onChange={onChange}
+								onInvalid={handleFocus}
+								focused={focused.toString()}
+							/>
+						))}
 
-						<div className='h-[1px] w-full bg-gray-400 my-2' />
+						{TextInputData.map(text => (
+							<TextInput
+								key={text.id}
+								{...text}
+								value={textValue[text.name]}
+								onChange={onChange}
+								onInvalid={handleFocus}
+								focused={focused.toString()}
+							/>
+						))}
 
-						<Link
-							to='/'
-							className='flex flex-row justify-center items-center my-5 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'>
-							<p className='text-white text-base'>Send</p>
-						</Link>
+						<div className='h-[1px] w-full bg-gray-400 mt-6' />
+
+						<button
+							type='submit'
+							className='flex flex-row justify-center items-center mt-5 mb-3 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white'>
+							Send
+						</button>
 					</form>
 				</div>
 			</div>
