@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import InputData from '../data/InputData'
 import TextInputData from '../data/TextInputData'
+import emailjs from '@emailjs/browser'
 import { FormInput, TextInput } from '../components/Inputs'
+import Loader from '../components/Loader'
 
 const Contact = () => {
 	const [focused, setFocused] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const [buttonText, setButtonText] = useState('Send')
 	const [values, setValues] = useState({
 		username: '',
 		email: '',
@@ -15,11 +19,39 @@ const Contact = () => {
 		message: '',
 	})
 
-	const handleSubmit = e => {
+	const initialState = 'Send'
+
+	useEffect(() => {
+		if (buttonText !== initialState) {
+			setTimeout(() => setButtonText(initialState), 2500)
+		}
+	}, [buttonText])
+
+	const changeText = () => {
+		setButtonText('SENT!')
+	}
+
+	const handleSubmit = async e => {
 		e.preventDefault()
+
+		setIsLoading(true)
+
+		// DEV
+		// complete the emailjs data before using !!!!!!!
+
+		await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_PUBLIC_KEY').then(
+			result => {
+				console.log(result.text)
+			},
+			error => {
+				console.log(error.text)
+			}
+		)
 
 		setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
 		setFocused(false)
+		setIsLoading(false)
+		changeText()
 	}
 
 	const onChange = e => {
@@ -76,11 +108,15 @@ const Contact = () => {
 
 						<div className='h-[1px] w-full bg-gray-400 mt-6' />
 
-						<button
-							type='submit'
-							className='flex flex-row justify-center items-center mt-5 mb-3 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white'>
-							Send
-						</button>
+						{isLoading ? (
+							<Loader />
+						) : (
+							<button
+								type='submit'
+								className='flex flex-row justify-center items-center mt-5 mb-3 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white'>
+								{buttonText}
+							</button>
+						)}
 					</form>
 				</div>
 			</div>
