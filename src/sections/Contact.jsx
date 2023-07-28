@@ -58,20 +58,18 @@ const Contact = () => {
 							e.target,
 							`${import.meta.env.VITE_PUBLIC_KEY}`
 						)
-						.then(
-							result => {
-								console.log(result.text)
-							},
-							error => {
-								console.log(error.text)
+						.then(res => {
+							if (res.status === 200) {
+								setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
+								setFocused(false)
+								setIsLoading(false)
+								setErrorValue('')
+								changeText()
 							}
-						)
-
-					setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
-					setFocused(false)
-					setIsLoading(false)
-					setErrorValue('')
-					changeText()
+						})
+						.catch(error => {
+							console.log(error.text)
+						})
 				} else if (res.data === 'Robot 🤖') {
 					setIsLoading(false)
 					setErrorValue("Don't be a 🤖!")
