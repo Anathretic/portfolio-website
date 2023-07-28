@@ -1,4 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import ReCAPTCHA from 'react-google-recaptcha'
+import axios from 'axios'
 import InputData from '../data/InputData'
 import TextInputData from '../data/TextInputData'
 import emailjs from '@emailjs/browser'
@@ -9,6 +12,7 @@ const Contact = () => {
 	const [focused, setFocused] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
 	const [buttonText, setButtonText] = useState('Send')
+	const [errorValue, setErrorValue] = useState('')
 	const [values, setValues] = useState({
 		username: '',
 		email: '',
@@ -18,7 +22,8 @@ const Contact = () => {
 	const [textValue, setTextValue] = useState({
 		message: '',
 	})
-
+	const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
+	const captchaRef = useRef(null)
 	const initialState = 'Send'
 
 	useEffect(() => {
@@ -35,23 +40,46 @@ const Contact = () => {
 		e.preventDefault()
 
 		setIsLoading(true)
+		const token = captchaRef.current.getValue()
+		captchaRef.current.reset()
 
-		// DEV
-		// complete the emailjs data before using !!!!!!!
+		await axios
+			.post(`http://localhost:${import.meta.env.VITE_PORT}/post`, { token })
+			.then(res => {
+				console.log(res)
+				if (res.data === 'Human 👨 👩') {
+					// DEV
+					//emailjs requires your IDs and keys !!!!!!!
 
-		await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_PUBLIC_KEY').then(
-			result => {
-				console.log(result.text)
-			},
-			error => {
-				console.log(error.text)
-			}
-		)
+					emailjs
+						.sendForm(
+							`${import.meta.env.VITE_SERVICE_ID}`,
+							`${import.meta.env.VITE_TEMPLATE_ID}`,
+							e.target,
+							`${import.meta.env.VITE_PUBLIC_KEY}`
+						)
+						.then(
+							result => {
+								console.log(result.text)
+							},
+							error => {
+								console.log(error.text)
+							}
+						)
 
-		setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
-		setFocused(false)
-		setIsLoading(false)
-		changeText()
+					setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
+					setFocused(false)
+					setIsLoading(false)
+					setErrorValue('')
+					changeText()
+				} else if (res.data === 'Robot 🤖') {
+					setIsLoading(false)
+					setErrorValue("Don't be a 🤖!")
+				}
+			})
+			.catch(error => {
+				console.log(error)
+			})
 	}
 
 	const onChange = e => {
@@ -105,6 +133,18 @@ const Contact = () => {
 								focused={focused.toString()}
 							/>
 						))}
+
+						{/* DEV */}
+						{/* sitekey requires your Google Captcha API Key */}
+
+						<ReCAPTCHA
+							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
+							size={isMobile ? 'compact' : 'normal'}
+							className='mt-10 ml-1.5 md:ml-0.5'
+							sitekey={import.meta.env.VITE_SITE_KEY}
+							ref={captchaRef}
+						/>
+						<p className='mt-5 text-red-600 text-lg font-bold'>{errorValue}</p>
 
 						<div className='h-[1px] w-full bg-gray-400 mt-6' />
 
