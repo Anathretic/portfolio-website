@@ -7,11 +7,7 @@ const FormInput = props => {
 	return (
 		<div className='w-full flex flex-col justify-center items-center'>
 			<label className='text-white mt-5'>{label}:</label>
-			<input
-				className={`${inputStyles}`}
-				{...inputProps}
-				onChange={onChange}
-			/>
+			<input className={`${inputStyles}`} {...inputProps} onChange={onChange} />
 			<span>{errorMessage}</span>
 		</div>
 	)
@@ -24,7 +20,7 @@ const TextInput = props => {
 		<div className='w-full flex flex-col justify-center items-center'>
 			<label className='text-white mt-5'>{label}:</label>
 			<textarea
-				className={`min-h-[96px] max-h-[256px] mb-5 ${inputStyles}`}
+				className={`min-h-[96px] max-h-[256px] ${inputStyles}`}
 				{...textProps}
 				onChange={onChange}
 				minLength={50}
@@ -35,4 +31,4 @@ const TextInput = props => {
 	)
 }
 
-export {FormInput, TextInput}
+export { FormInput, TextInput }
