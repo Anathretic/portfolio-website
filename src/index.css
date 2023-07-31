@@ -92,3 +92,7 @@ form input:invalid[focused='true'],
 form textarea:invalid[focused='true'] {
 	border: 1px solid rgb(239 68 68);
 }
+
+.date-span {
+	margin: 0 3px;
+}
