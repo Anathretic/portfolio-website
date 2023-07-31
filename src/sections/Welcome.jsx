@@ -37,7 +37,7 @@ const Welcome = () => {
 								<CardItem
 									key={id + title}
 									title={id.title}
-									text={id.text}
+									countdownMs={id.countdown}
 									gitHandle={id.gitHandle}
 									webHandle={id.webHandle}
 								/>

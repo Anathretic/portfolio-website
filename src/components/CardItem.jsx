@@ -1,6 +1,28 @@
+import { useState, useEffect } from 'react'
 import { FiChevronsRight } from 'react-icons/fi'
+import { getRemainingTimeUntilMsTimestamp } from '../utils/CountdownCardItemUtils'
 
-const CardItem = ({ title, text, webHandle, gitHandle }) => {
+const defaultRemainingTime = {
+	seconds: '00',
+	minutes: '00',
+	hours: '00',
+	days: '00'
+}
+
+const CardItem = ({ title, webHandle, gitHandle, countdownMs }) => {
+	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			updateRemainingTime(countdownMs)
+		}, 1000)
+		return () => clearInterval(interval)
+	}, [countdownMs])
+
+	const updateRemainingTime = (countdown) => {
+		setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown))
+	}
+
 	return (
 		<div>
 			<div className='p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 card'>
@@ -16,9 +38,19 @@ const CardItem = ({ title, text, webHandle, gitHandle }) => {
 				</div>
 			</div>
 			<div className='p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism text-white'>
-				<p>
-					{text}
-				</p>
+				<div>
+					<p className='flex justify-center mb-3'>Time to release:</p>
+					<div className='flex justify-center mb-3'>
+						<span className='date-span'>{remainingTime.days}</span>
+						<span className='date-span'>days</span>
+						<span className='date-span'>{remainingTime.hours}</span>
+						<span className='date-span'>hours</span>
+						<span className='date-span'>{remainingTime.minutes}</span>
+						<span className='date-span'>minutes</span>
+						<span className='date-span'>{remainingTime.seconds}</span>
+						<span className='date-span'>seconds</span>
+					</div>
+				</div>
 				<div className='h-[1px] w-full bg-gray-400 my-2'></div>
 				<a className='bg-[#b91c1c] py-3 px-10 mt-3 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300' href={gitHandle} target='_blank' rel='noreferrer'>
 					GitHub
