@@ -13,7 +13,7 @@ const Extras = () => {
 			</div>
 			<div className='flex-1 flex flex-col justify-start items-center'>
 				{ExtraData.map((id, title) => (
-					<ExtraCard key={id + title} icon={id.icon} color={id.color} title={id.title} subtitle={id.subtitle}/>
+					<ExtraCard key={id + title} icon={id.icon} color={id.color} title={id.title} subtitle={id.subtitle} href={id.href}/>
 				))}
 			</div>
 		</div>

@@ -11,14 +11,14 @@ const Footer = () => {
 				<div className='flex flex-end '>
 					<a
 						className='cursor-pointer mr-8 p-1 hover:text-red-500 transition duration-300'
-						href='https://github.com/'
+						href='https://github.com/Anathretic/portfolio-page'
 						target='_blank'
 						rel='noreferrer'>
 						<BsGithub fontSize={22} />
 					</a>
 					<a
 						className='cursor-pointer p-1 hover:text-red-500 transition duration-300'
-						href='https://pl.linkedin.com/'
+						href='https://www.linkedin.com/in/konrad-wojtylo'
 						target='_blank'
 						rel='noreferrer'>
 						<BsLinkedin fontSize={22} />

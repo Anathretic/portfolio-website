@@ -1,28 +1,31 @@
-import { BsShieldFillCheck } from 'react-icons/bs'
-import { BiSearchAlt } from 'react-icons/bi'
-import { RiHeart2Fill } from 'react-icons/ri'
+import { BsFillSunFill } from 'react-icons/bs'
+import { GiEarthAfricaEurope } from 'react-icons/gi'
+import { CiStickyNote } from 'react-icons/ci'
 
 const ExtraData = [
 	{
-        id: 4,
-		icon: <BsShieldFillCheck fontSize={22}/>,
-		color: 'bg-[#2952E3]',
+		id: 4,
+		icon: <BsFillSunFill fontSize={22} />,
+		color: 'bg-[#6F38C5]',
 		title: 'Extra-first',
 		subtitle: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, doloribus!',
+		href: 'https://just-paradise.pl/',
 	},
 	{
 		id: 5,
-		icon: <BiSearchAlt fontSize={22}/>,
-        color: 'bg-[#8945F8]',
+		icon: <GiEarthAfricaEurope fontSize={22} />,
+		color: 'bg-[#000000]',
 		title: 'Extra-second',
 		subtitle: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, doloribus!',
+		href: 'https://countrypedia.online/',
 	},
 	{
 		id: 6,
-		icon: <RiHeart2Fill fontSize={22}/>,
-        color: 'bg-[#F84550]',
+		icon: <CiStickyNote fontSize={22} />,
+		color: 'bg-[#CA909A]',
 		title: 'Extra-third',
 		subtitle: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, doloribus!',
+		href: 'https://noteapp.online/',
 	},
 ]
 

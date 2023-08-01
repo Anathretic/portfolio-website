@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { HiMenuAlt4 } from 'react-icons/hi'
-import { NavLink } from 'react-router-dom'
-
-const NavbarItem = ({ title, section, classProps, onClick }) => {
-	return (
-		<li className={`mx-4 cursor-pointer hover:text-red-500 transition duration-300 ${classProps}`}>
-			<NavLink className='p-2' to={section} onClick={onClick}>{title}</NavLink>
-		</li>
-	)
-}
+import NavbarItem from '../components/NavbarItem'
+import ExampleFile from '../../download/test.txt'
 
 const Navbar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false)
+
+	const handleDownload = () => {
+		const link = document.createElement('a')
+		link.download = 'Example-TXT-File'
+		link.href = ExampleFile
+		link.click()
+	}
 
 	return (
 		<nav className='w-full flex md:justify-center justify-between items-center p-4'>
@@ -22,7 +22,9 @@ const Navbar = () => {
 			<ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
 				<NavbarItem title='Home' section='/' />
 				<NavbarItem title='Contact' section='/contact' />
-				<li className='bg-[#b91c1c] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'>
+				<li
+					className='bg-[#b91c1c] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'
+					onClick={handleDownload}>
 					Download
 				</li>
 			</ul>
@@ -45,13 +47,27 @@ const Navbar = () => {
 						<li className='text-xl self-start my-2 cursor-pointer'>
 							<AiOutlineClose fontSize={28} onClick={() => setToggleMenu(false)} />
 						</li>
-						<NavbarItem title='Home' section='/' classProps={'mb-5'} onClick={() => {
-							setToggleMenu(false)
-						}}/>
-						<NavbarItem title='Contact' section='/contact' classProps={'mb-5'} onClick={() => {
-							setToggleMenu(false)
-						}}/>
-						<li className='bg-[#b91c1c] p-3 px-7 mx-4 my-3 rounded-full cursor-pointer self-center' >Download</li>
+						<NavbarItem
+							title='Home'
+							section='/'
+							classProps={'mb-5'}
+							onClick={() => {
+								setToggleMenu(false)
+							}}
+						/>
+						<NavbarItem
+							title='Contact'
+							section='/contact'
+							classProps={'mb-5'}
+							onClick={() => {
+								setToggleMenu(false)
+							}}
+						/>
+						<li
+							className='bg-[#b91c1c] p-3 px-7 mx-4 my-3 rounded-full cursor-pointer self-center'
+							onClick={handleDownload}>
+							Download
+						</li>
 					</ul>
 				)}
 			</div>

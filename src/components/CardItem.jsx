@@ -6,7 +6,7 @@ const defaultRemainingTime = {
 	seconds: '00',
 	minutes: '00',
 	hours: '00',
-	days: '00'
+	days: '00',
 }
 
 const CardItem = ({ title, webHandle, gitHandle, countdownMs }) => {
@@ -19,16 +19,24 @@ const CardItem = ({ title, webHandle, gitHandle, countdownMs }) => {
 		return () => clearInterval(interval)
 	}, [countdownMs])
 
-	const updateRemainingTime = (countdown) => {
+	const updateRemainingTime = countdown => {
 		setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown))
 	}
 
 	return (
-		<div>
+		<div className='w-full'>
 			<div className='p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 card'>
 				<div className='flex justify-between flex-col w-full h-full'>
 					<div className='flex justify-between items-start'>
-						<a className='w-10 h-10 rounded-full border-2 border-white flex justify-center items-center text-white cursor-pointer hover:bg-red-500 transition duration-300' href={webHandle} target='_blank' rel='noreferrer'>
+						<a
+							className={
+								webHandle
+									? 'w-10 h-10 rounded-full border-2 border-white flex justify-center items-center text-white cursor-pointer hover:bg-red-500 transition duration-300'
+									: 'w-10 h-10 rounded-full border-2 border-white flex justify-center items-center text-white'
+							}
+							href={webHandle ? webHandle : void 0}
+							target='_blank'
+							rel='noreferrer'>
 							<FiChevronsRight fontSize={24} />
 						</a>
 					</div>
@@ -42,17 +50,24 @@ const CardItem = ({ title, webHandle, gitHandle, countdownMs }) => {
 					<p className='flex justify-center mb-3'>Time to release:</p>
 					<div className='flex justify-center mb-3'>
 						<span className='date-span'>{remainingTime.days}</span>
-						<span className='date-span'>days</span>
+						<span>:</span>
 						<span className='date-span'>{remainingTime.hours}</span>
-						<span className='date-span'>hours</span>
+						<span>:</span>
 						<span className='date-span'>{remainingTime.minutes}</span>
-						<span className='date-span'>minutes</span>
+						<span>:</span>
 						<span className='date-span'>{remainingTime.seconds}</span>
-						<span className='date-span'>seconds</span>
 					</div>
 				</div>
 				<div className='h-[1px] w-full bg-gray-400 my-2'></div>
-				<a className='bg-[#b91c1c] py-3 px-10 mt-3 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300' href={gitHandle} target='_blank' rel='noreferrer'>
+				<a
+					className={
+						gitHandle
+							? 'bg-[#b91c1c] py-3 px-10 mt-3 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'
+							: 'bg-[#b91c1c] py-3 px-10 mt-3 rounded-full'
+					}
+					href={gitHandle ? gitHandle : void 0}
+					target='_blank'
+					rel='noreferrer'>
 					GitHub
 				</a>
 			</div>
