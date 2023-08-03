@@ -18,11 +18,19 @@ nav {
 	letter-spacing: 2px;
 }
 
-.gradient-bg-welcome {
+.gradient-bg-first {
 	background-color: #0f0e13;
 	background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
 		radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
 		radial-gradient(at 100% 0%, rgb(60, 66, 151) 0, transparent 50%);
+	background-size: cover;
+	background-position: center;
+}
+
+.gradient-bg-second {
+	background-color: #0f0e13;
+	background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+		radial-gradient(at 50% 100%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
 }
 
 .text-gradient {
@@ -53,24 +61,12 @@ nav {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.gradient-bg-extras {
-	background-color: #0f0e13;
-	background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
-		radial-gradient(at 50% 100%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
-}
-
 .white-glassmorphism {
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 16px;
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.gradient-bg-footer {
-	background-color: #0f0e13;
-	background-image: radial-gradient(at 0% 100%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
-		radial-gradient(at 50% 0%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
 }
 
 .active {
