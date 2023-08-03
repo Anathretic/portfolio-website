@@ -23,7 +23,7 @@ const Navbar = () => {
 				<NavbarItem title='Home' section='/' />
 				<NavbarItem title='Contact' section='/contact' />
 				<li
-					className='bg-[#b91c1c] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'
+					className='bg-[#b91c1c] py-2 px-7 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 z-10'
 					onClick={handleDownload}>
 					Download
 				</li>

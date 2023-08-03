@@ -1,10 +1,10 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
-const Footer = () => {
+const Footer = ({bgGradient}) => {
 	const currentYear = new Date().getFullYear()
 
 	return (
-		<div className='w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer text-white'>
+		<div className={`${bgGradient} w-full flex md:justify-center justify-between items-center flex-col p-4 text-white`}>
 			<div className='sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-20' />
 			<div className='sm:w-[90%] w-full flex justify-between items-center my-5'>
 				<p className='text-sm text-center mf:text-base'>&copy; {currentYear} Test Title</p>
