@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import ReCAPTCHA from 'react-google-recaptcha'
-import axios from 'axios'
+// import axios from 'axios' - only for DEV
 import InputData from '../data/InputData'
 import TextInputData from '../data/TextInputData'
 import emailjs from '@emailjs/browser'
@@ -23,7 +23,7 @@ const Contact = () => {
 		message: '',
 	})
 	const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
-	const captchaRef = useRef(null)
+	const refCaptcha = useRef(null)
 	const initialState = 'Send'
 
 	useEffect(() => {
@@ -40,44 +40,72 @@ const Contact = () => {
 		e.preventDefault()
 
 		setIsLoading(true)
-		const token = captchaRef.current.getValue()
-		captchaRef.current.reset()
+		const token = await refCaptcha.current.getValue()
+		refCaptcha.current.reset()
 
-		await axios
-			.post(`http://localhost:${import.meta.env.VITE_PORT}/post`, { token })
-			.then(res => {
-				console.log(res)
-				if (res.data === 'Human 👨 👩') {
-					// DEV
-					//emailjs requires your IDs and keys !!!!!!!
+		const params = {
+			...values,
+			...textValue,
+			'g-recaptcha-response': token,
+		}
 
-					emailjs
-						.sendForm(
-							`${import.meta.env.VITE_SERVICE_ID}`,
-							`${import.meta.env.VITE_TEMPLATE_ID}`,
-							e.target,
-							`${import.meta.env.VITE_PUBLIC_KEY}`
-						)
-						.then(res => {
-							if (res.status === 200) {
-								setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
-								setFocused(false)
-								setIsLoading(false)
-								setErrorValue('')
-								changeText()
-							}
-						})
-						.catch(error => {
-							console.log(error.text)
-						})
-				} else if (res.data === 'Robot 🤖') {
-					setIsLoading(false)
-					setErrorValue("Don't be a 🤖!")
-				}
-			})
-			.catch(error => {
-				console.log(error)
-			})
+		token
+			? emailjs
+					.send(
+						`${import.meta.env.VITE_SERVICE_ID}`,
+						`${import.meta.env.VITE_TEMPLATE_ID}`,
+						params,
+						`${import.meta.env.VITE_PUBLIC_KEY}`
+					)
+					.then(res => {
+						if (res.status === 200) {
+							setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
+							setFocused(false)
+							setIsLoading(false)
+							setErrorValue('')
+							changeText()
+						}
+					})
+			: setIsLoading(false)
+		setErrorValue("Don't be a 🤖!")
+
+		// DEV ONLY BELOW - LOCAL DEBUG CAPTCHA
+
+		// await axios
+		// 	.post(`http://localhost:${import.meta.env.VITE_PORT}/post`, { token })
+		// 	.then(res => {
+		// 		console.log(res)
+		// 		if (res.data === 'Human 👨 👩') {
+		// 			// DEV
+		// 			//emailjs requires your IDs and keys !!!!!!!
+
+		// 			emailjs
+		// 				.sendForm(
+		// 					`${import.meta.env.VITE_SERVICE_ID}`,
+		// 					`${import.meta.env.VITE_TEMPLATE_ID}`,
+		// 					e.target,
+		// 					`${import.meta.env.VITE_PUBLIC_KEY}`
+		// 				)
+		// 				.then(res => {
+		// 					if (res.status === 200) {
+		// 						setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
+		// 						setFocused(false)
+		// 						setIsLoading(false)
+		// 						setErrorValue('')
+		// 						changeText()
+		// 					}
+		// 				})
+		// 				.catch(error => {
+		// 					console.log(error.text)
+		// 				})
+		// 		} else if (res.data === 'Robot 🤖') {
+		// 			setIsLoading(false)
+		// 			setErrorValue("Don't be a 🤖!")
+		// 		}
+		// 	})
+		// 	.catch(error => {
+		// 		console.log(error)
+		// 	})
 	}
 
 	const onChange = e => {
@@ -140,7 +168,7 @@ const Contact = () => {
 							size={isMobile ? 'compact' : 'normal'}
 							className='mt-10 ml-1.5 md:ml-0.5'
 							sitekey={import.meta.env.VITE_SITE_KEY}
-							ref={captchaRef}
+							ref={refCaptcha}
 						/>
 						<p className='mt-5 text-red-600 text-lg font-bold'>{errorValue}</p>
 
