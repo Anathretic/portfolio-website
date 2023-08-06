@@ -25,7 +25,7 @@ const InputData = [
 		placeholder: 'Enter your subject..',
 		label: 'Subject',
 		errorMessage: 'Should be 6-35 characters!',
-		pattern: '^[A-Za-z]{6,35}$',
+		pattern: '^[A-Za-z ]{6,35}$',
 		required: true,
 	},
 ]
