@@ -1,24 +1,21 @@
 const CardData = [
 	{
 		id: 1,
-		title: 'First-title',
-		countdown: 1691421808650,
+		title: 'Nietypowa-Sowa',
+		countdown: 1692028800000,
 		webHandle: '',
-		gitHandle: '',
 	},
 	{
 		id: 2,
-		title: 'Second-title',
-		countdown: 1692631408650,
+		title: 'Saints Arch&Dev',
+		countdown: 1692972000000,
 		webHandle: '',
-		gitHandle: '',
 	},
 	{
 		id: 3,
-		title: 'Third-title',
-		countdown: 1696001008650,
+		title: 'Mysterious Project',
+		countdown: 1696000500000,
 		webHandle: '',
-		gitHandle: '',
 	},
 ]
 

@@ -9,12 +9,14 @@ const Welcome = () => {
 	return (
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4'>
-				<div className='flex flex-1 justify-start items-start flex-col mf:mr-20'>
-					<h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>
-						Main Title <br /> with fancy gradient
+				<div className='flex flex-1 justify-center items-center flex-col mf:mr-20'>
+					<h1 className='text-3xl sm:text-5xl text-white text-gradient py-1 text-left'>
+						Novice frontend <br /> developer with..
+						<br />
+						Fancy gradients!
 					</h1>
-					<p className='text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					<p className='text-left mt-5 text-white font-light text-base max-[350px]:text-left text-center mf:text-left'>
+						Currently working on several commercial projects.
 					</p>
 					<Link
 						to='/contact'
@@ -31,19 +33,9 @@ const Welcome = () => {
 					</div>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-20 mt-10'>
-					{CardData.map(
-						(id, title) => (
-							(
-								<CardItem
-									key={id + title}
-									title={id.title}
-									countdownMs={id.countdown}
-									gitHandle={id.gitHandle}
-									webHandle={id.webHandle}
-								/>
-							)
-						)
-					)}
+					{CardData.map((id, title) => (
+						<CardItem key={id + title} title={id.title} countdownMs={id.countdown} webHandle={id.webHandle} />
+					))}
 				</div>
 			</div>
 		</div>
