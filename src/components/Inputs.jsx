@@ -8,7 +8,7 @@ const FormInput = props => {
 		<div className='w-full flex flex-col justify-center items-center'>
 			<label className='text-white mt-5'>{label}:</label>
 			<input className={`${inputStyles}`} {...inputProps} onChange={onChange} />
-			<span>{errorMessage}</span>
+			<span className="text-center">{errorMessage}</span>
 		</div>
 	)
 }
@@ -26,7 +26,7 @@ const TextInput = props => {
 				minLength={50}
 				maxLength={1000}
 			/>
-			<span>{errorMessage}</span>
+			<span className="text-center">{errorMessage}</span>
 		</div>
 	)
 }

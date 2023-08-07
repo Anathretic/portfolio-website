@@ -5,8 +5,8 @@ const InputData = [
 		type: 'text',
 		placeholder: 'Enter your name..',
 		label: 'Name',
-		errorMessage: 'Should be 3-16 characters!',
-		pattern: '^[A-Za-z]{3,16}$',
+		errorMessage: 'Max. 16 characters!',
+		pattern: '^[A-Za-z]{1,16}$',
 		required: true,
 	},
 	{
@@ -15,7 +15,7 @@ const InputData = [
 		type: 'email',
 		placeholder: 'Enter your e-mail..',
 		label: 'E-mail',
-		errorMessage: 'It should be a valid email address!',
+		errorMessage: 'Enter a valid email address!',
 		required: true,
 	},
 	{

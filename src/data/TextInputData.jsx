@@ -5,7 +5,7 @@ const TextInputData = [
         type: 'text',
         placeholder: 'Enter your message..',
         label: 'Message',
-        errorMessage: 'Write something! (50-1000 characters)',
+        errorMessage: 'Should be 50-1000 characters!',
         required: true,
     },
 ]
