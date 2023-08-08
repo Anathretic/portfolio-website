@@ -15,21 +15,22 @@ const Welcome = () => {
 						<br />
 						Fancy gradients!
 					</h1>
-					<p className='text-left mt-5 text-white font-light text-base max-[350px]:text-left text-center mf:text-left'>
-						Currently working on several commercial projects.
-					</p>
+					<div className='text-left mt-5 text-white font-light text-base max-[350px]:text-left text-center mf:text-left'>
+						<p>Currently working on several commercial projects..</p>
+						<p>But I am still looking for a full time job!</p>
+					</div>
 					<Link
 						to='/contact'
 						className='flex flex-row justify-center items-center my-5 bg-[#b91c1c] p-3 w-full rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'>
 						<p className='text-white text-base'>Contact</p>
 					</Link>
 					<div className='grid grid-cols-2 w-full mt-10'>
-						<div className={`rounded-tl-2xl ${commonStyles}`}>Ability</div>
-						<div className={`${commonStyles} rounded-tr-2xl`}>Ability</div>
-						<div className={`${commonStyles}`}>Ability</div>
-						<div className={`${commonStyles}`}>Ability</div>
-						<div className={`${commonStyles} rounded-bl-2xl`}>Ability</div>
-						<div className={`rounded-br-2xl ${commonStyles}`}>Ability</div>
+						<div className={`rounded-tl-2xl ${commonStyles}`}>Creativity</div>
+						<div className={`${commonStyles} rounded-tr-2xl`}>Communication</div>
+						<div className={`${commonStyles}`}>Teamwork</div>
+						<div className={`${commonStyles}`}>Negotiation</div>
+						<div className={`${commonStyles} rounded-bl-2xl`}>RWD</div>
+						<div className={`rounded-br-2xl ${commonStyles}`}>SEO</div>
 					</div>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-20 mt-10'>
