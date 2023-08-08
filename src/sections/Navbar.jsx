@@ -2,15 +2,15 @@ import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { HiMenuAlt4 } from 'react-icons/hi'
 import NavbarItem from '../components/NavbarItem'
-import ExampleFile from '/test.txt'
+import CurriculumFile from '../../download/curriculum.pdf'
 
 const Navbar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false)
 
 	const handleDownload = () => {
 		const link = document.createElement('a')
-		link.download = 'Example-TXT-File'
-		link.href = ExampleFile
+		link.download = 'Konrad-Wojtylo-CV'
+		link.href = CurriculumFile
 		link.click()
 	}
 
