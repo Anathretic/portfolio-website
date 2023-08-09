@@ -1,4 +1,4 @@
-const ExtraCard = ({ color, title, icon, subtitle, href }) => {
+const ExtraItem = ({ color, title, icon, subtitle, href }) => {
 	return (
 		<a
 			href={href}
@@ -14,4 +14,4 @@ const ExtraCard = ({ color, title, icon, subtitle, href }) => {
 	)
 }
 
-export default ExtraCard
+export default ExtraItem
