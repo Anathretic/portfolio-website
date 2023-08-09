@@ -35,7 +35,7 @@ const Welcome = () => {
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-20 mt-10'>
 					{CardData.map((id, title) => (
-						<CardItem key={id + title} title={id.title} countdownMs={id.countdown} webHandle={id.webHandle} />
+						<CardItem key={id + title} title={id.title} countdownMs={id.countdown} webHandle={id.webHandle} text={id.text} bgImg={id.id} />
 					))}
 				</div>
 			</div>

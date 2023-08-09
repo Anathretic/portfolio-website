@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import { Navbar, Welcome, Footer, Extras, Contact, PageNotFound } from './sections'
+import { Navbar, Welcome, Footer, Extras, Contact, PageNotFound, PrivacyPolicy } from './sections'
+import CookieBaner from './components/CookieBaner'
 
 const App = () => {
 	return (
@@ -29,6 +30,16 @@ const App = () => {
 						}
 					/>
 					<Route
+						path='/privacy-policy'
+						element={
+							<>
+								<Navbar />
+								<PrivacyPolicy />
+								<Footer bgGradient=''/>
+							</>
+						}
+					/>
+					<Route
 						path='*'
 						element={
 							<>
@@ -40,6 +51,7 @@ const App = () => {
 					/>
 				</Routes>
 			</div>
+			<CookieBaner />
 		</div>
 	)
 }

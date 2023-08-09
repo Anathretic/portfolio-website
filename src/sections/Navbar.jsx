@@ -27,12 +27,13 @@ const Navbar = () => {
 				</div>
 			</div>
 			<ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
-				<NavbarItem title='Home' section='/' />
-				<NavbarItem title='Contact' section='/contact' />
+				<NavbarItem title='home' section='/' />
+				<NavbarItem title='contact' section='/contact' />
+				<NavbarItem title='policy' section='/privacy-policy' />
 				<li
 					className='bg-[#b91c1c] py-2 px-7 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 uppercase z-10'
 					onClick={handleDownload}>
-					curriculum
+					resume
 				</li>
 			</ul>
 			<div className='flex relative'>
@@ -55,7 +56,7 @@ const Navbar = () => {
 							<AiOutlineClose fontSize={28} onClick={() => setToggleMenu(false)} />
 						</li>
 						<NavbarItem
-							title='Home'
+							title='home'
 							section='/'
 							classProps={'mb-5'}
 							onClick={() => {
@@ -63,8 +64,16 @@ const Navbar = () => {
 							}}
 						/>
 						<NavbarItem
-							title='Contact'
+							title='contact'
 							section='/contact'
+							classProps={'mb-5'}
+							onClick={() => {
+								setToggleMenu(false)
+							}}
+						/>
+						<NavbarItem
+							title='policy'
+							section='/privacy-policy'
 							classProps={'mb-5'}
 							onClick={() => {
 								setToggleMenu(false)
@@ -73,7 +82,7 @@ const Navbar = () => {
 						<li
 							className='bg-[#b91c1c] p-3 px-7 mx-4 my-3 rounded-full cursor-pointer uppercase self-center'
 							onClick={handleDownload}>
-							curriculum
+							resume
 						</li>
 					</ul>
 				)}

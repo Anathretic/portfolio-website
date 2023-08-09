@@ -1,4 +1,4 @@
-import ExtraCard from '../components/ExtraItem'
+import ExtraItem from '../components/ExtraItem'
 import ExtraData from '../data/ExtraData'
 
 const Extras = () => {
@@ -13,7 +13,7 @@ const Extras = () => {
 			</div>
 			<div className='flex-1 flex flex-col justify-start items-center'>
 				{ExtraData.map((id, title) => (
-					<ExtraCard
+					<ExtraItem
 						key={id + title}
 						icon={id.icon}
 						color={id.color}

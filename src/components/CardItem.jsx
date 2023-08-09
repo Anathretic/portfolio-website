@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { FiChevronsRight } from 'react-icons/fi'
 import { getRemainingTimeUntilMsTimestamp } from '../utils/CountdownCardItemUtils'
 
 const defaultRemainingTime = {
@@ -9,7 +8,7 @@ const defaultRemainingTime = {
 	days: '00',
 }
 
-const CardItem = ({ title, webHandle, countdownMs }) => {
+const CardItem = ({ title, webHandle, countdownMs, text, bgImg }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
 	useEffect(() => {
@@ -25,23 +24,31 @@ const CardItem = ({ title, webHandle, countdownMs }) => {
 
 	return (
 		<div className='w-full'>
-			<div className='p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 card'>
+			<div className={`p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 ${webHandle ? `card-${bgImg}` : 'card' }`}>
 				<div className='flex w-full h-full'>
 					<p className='text-white font-light text-lg mt-1 self-end'>{title}</p>
 				</div>
 			</div>
 			<div className='p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism text-white'>
 				<div>
-					<p className='flex justify-center mb-3'>Time to release:</p>
-					<div className='flex justify-center mb-3'>
-						<span className='date-span'>{remainingTime.days}</span>
-						<span>:</span>
-						<span className='date-span'>{remainingTime.hours}</span>
-						<span>:</span>
-						<span className='date-span'>{remainingTime.minutes}</span>
-						<span>:</span>
-						<span className='date-span'>{remainingTime.seconds}</span>
-					</div>
+					{webHandle ? (
+						<>
+							<p className='flex justify-center mb-3'>{text}</p>
+						</>
+					) : (
+						<>
+							<p className='flex justify-center mb-3'>Time to release:</p>
+							<div className='flex justify-center mb-3'>
+								<span className='date-span'>{remainingTime.days}</span>
+								<span>:</span>
+								<span className='date-span'>{remainingTime.hours}</span>
+								<span>:</span>
+								<span className='date-span'>{remainingTime.minutes}</span>
+								<span>:</span>
+								<span className='date-span'>{remainingTime.seconds}</span>
+							</div>
+						</>
+					)}
 				</div>
 				<div className='h-[1px] w-full bg-gray-400 my-2'></div>
 				<a
