@@ -7,7 +7,7 @@ const Welcome = () => {
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4'>
 				<div className='flex flex-1 justify-center items-center flex-col mf:mr-20'>
-					<h1 className='text-3xl sm:text-5xl text-white text-gradient py-1 text-left'>
+					<h1 className='text-4xl sm:text-5xl text-white text-gradient py-1 max-rsm:text-left text-center min-[400px]:text-left'>
 						Novice frontend <br /> developer with..
 						<br />
 						Fancy gradients!
