@@ -2,7 +2,7 @@ const CardData = [
 	{
 		id: 1,
 		title: 'Nietypowa-Sowa',
-		countdown: 1692028800000,
+		countdown: 1692201600000,
 		webHandle: '',
 		text: '',
 	},
