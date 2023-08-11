@@ -7,6 +7,7 @@ import TextInputData from '../data/TextInputData'
 import emailjs from '@emailjs/browser'
 import { FormInput, TextInput } from '../components/Inputs'
 import Loader from '../components/Loader'
+import { BsCheck2All } from "react-icons/bs";
 
 const Contact = () => {
 	const [focused, setFocused] = useState(false)
@@ -33,7 +34,7 @@ const Contact = () => {
 	}, [buttonText])
 
 	const changeText = () => {
-		setButtonText('SENT!')
+		setButtonText(<BsCheck2All color='#50eb02' fontSize={24}/>)
 	}
 
 	const handleSubmit = async e => {

@@ -5,6 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			screens: {
+				rsm: '350px',
 				mf: '990px',
 			},
 			keyframes: {
