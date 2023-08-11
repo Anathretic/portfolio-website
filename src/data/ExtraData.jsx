@@ -1,15 +1,15 @@
-import { BsFillSunFill } from 'react-icons/bs'
+import { FaSpa } from 'react-icons/fa'
 import { GiEarthAfricaEurope } from 'react-icons/gi'
 import { CiStickyNote } from 'react-icons/ci'
 
 const ExtraData = [
 	{
 		id: 4,
-		icon: <BsFillSunFill fontSize={22} />,
-		color: 'bg-[#6F38C5]',
-		title: 'Just-paradise',
-		subtitle: 'Travel agency website with a well-planned UI that allows to quickly guide a potential customer through the trip booking process.',
-		href: 'https://just-paradise.pl/',
+		icon: <FaSpa fontSize={22} />,
+		color: 'bg-[#257791]',
+		title: 'For You - SPA&Resort',
+		subtitle: 'Spa salon website with a well-planned UI that allows you to quickly book a treatment via the booking form.',
+		href: 'https://foryou-spa.online/',
 	},
 	{
 		id: 5,

@@ -5,16 +5,15 @@ import CookieBaner from './components/CookieBaner'
 const App = () => {
 	return (
 		<div className='min-h-screen'>
-			<div className='gradient-bg-first'>
+			<div className='bg-gradient'>
+				<Navbar />
 				<Routes>
 					<Route
 						path='/'
 						element={
 							<>
-								<Navbar />
 								<Welcome />
 								<Extras />
-								<Footer bgGradient='gradient-bg-second' />
 							</>
 						}
 					/>
@@ -22,10 +21,8 @@ const App = () => {
 						path='/contact'
 						element={
 							<>
-								<Navbar />
 								<Contact />
 								<Extras />
-								<Footer bgGradient='gradient-bg-second' />
 							</>
 						}
 					/>
@@ -33,9 +30,7 @@ const App = () => {
 						path='/privacy-policy'
 						element={
 							<>
-								<Navbar />
 								<PrivacyPolicy />
-								<Footer bgGradient=''/>
 							</>
 						}
 					/>
@@ -43,13 +38,12 @@ const App = () => {
 						path='*'
 						element={
 							<>
-								<Navbar />
 								<PageNotFound />
-								<Footer bgGradient='' />
 							</>
 						}
 					/>
 				</Routes>
+				<Footer />
 			</div>
 			<CookieBaner />
 		</div>
