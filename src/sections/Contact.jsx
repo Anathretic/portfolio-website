@@ -125,7 +125,7 @@ const Contact = () => {
 					<form
 						onSubmit={handleSubmit}
 						className='px-5 py-2 sm:w-96 w-full flex flex-col justify-start items-center blue-gradient mt-10'>
-						<h2 className='p-5 text-2xl text-white text-gradient'>Contact me!</h2>
+						<h3 className='p-5 text-2xl text-white text-gradient'>Contact me!</h3>
 
 						<div className='h-[1px] w-full bg-gray-400 my-1' />
 
