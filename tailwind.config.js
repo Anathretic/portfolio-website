@@ -3,10 +3,6 @@ module.exports = {
 	mode: 'jit',
 	darkMode: false,
 	theme: {
-		fontFamily: {
-			display: ['Raleway', 'sans-serif'],
-			body: ['Raleway', 'sans-serif'],
-		},
 		extend: {
 			screens: {
 				mf: '990px',

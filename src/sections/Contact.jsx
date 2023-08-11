@@ -120,7 +120,7 @@ const Contact = () => {
 	return (
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4'>
-				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mt-10'>
+				<div className='flex flex-col flex-1 items-center justify-start w-full max-md:m-5 max-[300px]:m-1 sm:w-96 mf:mt-0 mt-10'>
 					<form
 						onSubmit={handleSubmit}
 						className='px-5 py-2 sm:w-96 w-full flex flex-col justify-start items-center blue-gradient mt-10'>
@@ -156,7 +156,7 @@ const Contact = () => {
 						<ReCAPTCHA
 							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 							size={isMobile ? 'compact' : 'normal'}
-							className='mt-10 ml-1.5 md:ml-0.5'
+							className='mt-10 md:ml-0.5'
 							sitekey={import.meta.env.VITE_SITE_KEY}
 							ref={refCaptcha}
 						/>
