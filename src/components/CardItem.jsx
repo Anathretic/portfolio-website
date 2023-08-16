@@ -33,7 +33,7 @@ const CardItem = ({ title, webHandle, countdownMs, text, bgImg }) => {
 				<div>
 					{webHandle ? (
 						<>
-							<p className='flex justify-center mb-3'>{text}</p>
+							<p className='text-center mb-3'>{text}</p>
 						</>
 					) : (
 						<>
