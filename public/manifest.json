@@ -1,0 +1,15 @@
+{
+	"name": "Konrad Wojtyło's Portfolio",
+	"description": "Application showing a portfolio of front-end projects",
+	"start_url": "https://konrad-wojtylo.com",
+	"display": "standalone",
+	"theme_color": "#111111",
+	"background_color": "#222222",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "24x24",
+			"type": "image/x-icon"
+		}
+	]
+}

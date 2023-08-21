@@ -22,7 +22,7 @@ const Navbar = () => {
 		<nav className='w-full flex md:justify-center justify-between items-center p-4'>
 			<div className='md:flex-[0.8] 2xl:flex-[0.5] flex-initial justify-center items-center'>
 				<div className='flex'>
-					<img src='/favicon.svg' alt='Logo that refreshes the page' className='mr-1'/>
+					<img src='/src/images/logo.svg' alt='Logo that refreshes the page' className='mr-1'/>
 					<p className='cursor-pointer text-white uppercase' onClick={handleLogo}>konrad wojtyło</p>
 				</div>
 			</div>
