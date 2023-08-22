@@ -1,3 +1,5 @@
+import ButtonMailto from "../utils/ButtonMailto"
+
 const PrivacyPolicy = () => {
 	const policyBoxStyle = 'p-3 mt-5 max-[360px]:w-full w-9/12 md:w-2/3 lg:w-1/2'
 
@@ -27,7 +29,7 @@ const PrivacyPolicy = () => {
 				<p className='mb-3'>Other information</p>
 				<p className='font-light'>
 					If you have any further questions, please contact me at:{' '}
-					<span className='font-normal'>konrad.wojtylo.9@gmail.com</span>
+					<ButtonMailto label='konrad.wojtylo.9@gmail.com' mailto='mailto:konrad.wojtylo.9@gmail.com'/>
 				</p>
 			</div>
 		</div>

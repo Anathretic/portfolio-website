@@ -19,11 +19,13 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav className='w-full flex md:justify-center justify-between items-center p-4'>
+		<nav className='w-full h-[80px] flex md:justify-center justify-between items-center p-4'>
 			<div className='md:flex-[0.8] 2xl:flex-[0.5] flex-initial justify-center items-center'>
 				<div className='flex'>
-					<img src='/logo.svg' alt='Logo that refreshes the page' className='mr-1'/>
-					<p className='cursor-pointer text-white uppercase' onClick={handleLogo}>konrad wojtyło</p>
+					<img src='/logo.svg' alt='Logo that refreshes the page' className='mr-1' />
+					<p className='cursor-pointer text-white uppercase' onClick={handleLogo}>
+						konrad wojtyło
+					</p>
 				</div>
 			</div>
 			<ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
@@ -37,13 +39,7 @@ const Navbar = () => {
 				</li>
 			</ul>
 			<div className='flex relative'>
-				{toggleMenu ? (
-					<AiOutlineClose
-						fontSize={32}
-						className='text-white md:hidden cursor-pointer'
-						onClick={() => setToggleMenu(false)}
-					/>
-				) : (
+				{toggleMenu || (
 					<HiMenuAlt4
 						fontSize={32}
 						className='text-white md:hidden cursor-pointer'
