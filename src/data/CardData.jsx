@@ -9,9 +9,10 @@ const CardData = [
 	{
 		id: 2,
 		title: 'Saints Arch&Dev',
-		countdown: 1692972000000,
+		countdown: 1694012400000,
 		webHandle: '',
 		text: '',
+		specialText: '*Reschedule due to some major changes',
 	},
 	{
 		id: 3,
