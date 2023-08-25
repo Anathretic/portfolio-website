@@ -8,7 +8,7 @@ const defaultRemainingTime = {
 	days: '00',
 }
 
-const CardItem = ({ title, webHandle, countdownMs, text, bgImg }) => {
+const CardItem = ({ title, webHandle, countdownMs, text, bgImg, specialText }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
 	useEffect(() => {
@@ -47,6 +47,7 @@ const CardItem = ({ title, webHandle, countdownMs, text, bgImg }) => {
 								<span>:</span>
 								<span className='date-span'>{remainingTime.seconds}</span>
 							</div>
+							<p className='flex justify-center italic text-center font-light'>{specialText}</p>
 						</>
 					)}
 				</div>

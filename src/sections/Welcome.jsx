@@ -36,6 +36,7 @@ const Welcome = () => {
 							webHandle={id.webHandle}
 							text={id.text}
 							bgImg={id.id}
+							specialText={id.specialText}
 						/>
 					))}
 				</div>
