@@ -48,6 +48,10 @@ nav {
 	background-image: url('/src/images/nietypowa-card.jpg');
 }
 
+.card-2 {
+	background-image: url('/src/images/saints-card.jpg');
+}
+
 .blue-gradient {
 	background: rgba(41, 60, 122, 0.664);
 	border-radius: 16px;
