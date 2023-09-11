@@ -1,5 +1,5 @@
-import ExtraItem from '../components/ExtraItem'
-import ExtraData from '../data/ExtraData'
+import { ExtraItem } from '../components/ExtraItem'
+import { ExtraData } from '../data/ExtraData'
 
 const Extras = () => {
 	return (

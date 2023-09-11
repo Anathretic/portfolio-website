@@ -8,7 +8,7 @@ const defaultRemainingTime = {
 	days: '00',
 }
 
-const CardItem = ({ title, webHandle, countdownMs, text, bgImg, specialText }) => {
+export const CardItem = ({ title, webHandle, countdownMs, text, bgImg, specialText }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
 	useEffect(() => {
@@ -24,7 +24,10 @@ const CardItem = ({ title, webHandle, countdownMs, text, bgImg, specialText }) =
 
 	return (
 		<div className='w-full'>
-			<div className={`p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 ${webHandle ? `card-${bgImg}` : 'card animate-pulse' }`}>
+			<div
+				className={`p-3 flex justify-end items-start flex-col rounded-xl h-60 sm:w-96 my-3 ${
+					webHandle ? `card-${bgImg}` : 'card animate-pulse'
+				}`}>
 				<div className='flex w-full h-full'>
 					<p className='text-white font-light text-lg self-end'>{title}</p>
 				</div>
@@ -67,5 +70,3 @@ const CardItem = ({ title, webHandle, countdownMs, text, bgImg, specialText }) =
 		</div>
 	)
 }
-
-export default CardItem

@@ -1,4 +1,4 @@
-const CardData = [
+export const CardData = [
 	{
 		id: 1,
 		title: 'Nietypowa-Sowa',
@@ -21,5 +21,3 @@ const CardData = [
 		text: '',
 	},
 ]
-
-export default CardData

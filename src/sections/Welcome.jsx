@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import CardItem from '../components/CardItem'
-import CardData from '../data/CardData'
+import { CardItem } from '../components/CardItem'
+import { CardData } from '../data/CardData'
 
 const Welcome = () => {
 	return (
