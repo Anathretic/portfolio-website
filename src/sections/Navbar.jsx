@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { HiMenuAlt4 } from 'react-icons/hi'
-import NavbarItem from '../components/NavbarItem'
+import { NavbarItem } from '../components/NavbarItem'
 import CurriculumFile from '../../download/curriculum.pdf'
 
 const Navbar = () => {
