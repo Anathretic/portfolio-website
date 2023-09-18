@@ -4,6 +4,21 @@ import { HiMenuAlt4 } from 'react-icons/hi'
 import { NavbarItem } from '../components/NavbarItem'
 import CurriculumFile from '../../download/curriculum.pdf'
 
+const navbarItems = [
+	{
+		title: 'home',
+		section: '/',
+	},
+	{
+		title: 'contact',
+		section: '/contact',
+	},
+	{
+		title: 'policy',
+		section: '/privacy-policy',
+	},
+]
+
 const Navbar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false)
 
@@ -29,9 +44,9 @@ const Navbar = () => {
 				</div>
 			</div>
 			<ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
-				<NavbarItem title='home' section='/' />
-				<NavbarItem title='contact' section='/contact' />
-				<NavbarItem title='policy' section='/privacy-policy' />
+				{navbarItems.map(({ title, section }) => (
+					<NavbarItem key={title} title={title} section={section} />
+				))}
 				<li
 					className='bg-[#b91c1c] py-2 px-7 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 uppercase z-10'
 					onClick={handleDownload}>
@@ -51,30 +66,15 @@ const Navbar = () => {
 						<li className='text-xl self-start my-2 cursor-pointer'>
 							<AiOutlineClose fontSize={28} onClick={() => setToggleMenu(false)} />
 						</li>
-						<NavbarItem
-							title='home'
-							section='/'
-							classProps={'mb-5'}
-							onClick={() => {
-								setToggleMenu(false)
-							}}
-						/>
-						<NavbarItem
-							title='contact'
-							section='/contact'
-							classProps={'mb-5'}
-							onClick={() => {
-								setToggleMenu(false)
-							}}
-						/>
-						<NavbarItem
-							title='policy'
-							section='/privacy-policy'
-							classProps={'mb-5'}
-							onClick={() => {
-								setToggleMenu(false)
-							}}
-						/>
+						{navbarItems.map(({ title, section }) => (
+							<NavbarItem
+								key={title}
+								title={title}
+								section={section}
+								classProps={'mb-5'}
+								onClick={() => setToggleMenu(false)}
+							/>
+						))}
 						<li
 							className='bg-[#b91c1c] p-3 px-7 mx-4 my-3 rounded-full cursor-pointer uppercase self-center'
 							onClick={handleDownload}>
