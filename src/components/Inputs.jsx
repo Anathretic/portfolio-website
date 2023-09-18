@@ -1,9 +1,7 @@
 const inputStyles =
 	'my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-gradient'
 
-export const FormInput = props => {
-	const { label, onChange, errorMessage, ...inputProps } = props
-
+export const FormInput = ({ label, onChange, errorMessage, ...inputProps }) => {
 	return (
 		<div className='w-full flex flex-col justify-center items-center'>
 			<label className='text-white mt-5'>{label}:</label>
@@ -13,9 +11,7 @@ export const FormInput = props => {
 	)
 }
 
-export const TextInput = props => {
-	const { label, onChange, errorMessage, ...textProps } = props
-
+export const TextInput = ({ label, onChange, errorMessage, ...textProps }) => {
 	return (
 		<div className='w-full flex flex-col justify-center items-center'>
 			<label className='text-white mt-5'>{label}:</label>
