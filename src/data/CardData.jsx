@@ -16,7 +16,7 @@ export const CardData = [
 	{
 		id: 3,
 		title: 'Mysterious Project',
-		countdown: 1696000500000,
+		countdown: 1698770700000,
 		webHandle: '',
 		text: '',
 	},
