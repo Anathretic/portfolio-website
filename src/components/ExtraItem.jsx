@@ -12,5 +12,5 @@ export const ExtraItem = ({ color, title, icon, subtitle, href, ...otherProps })
 				<p className='my-2 text-white text-sm'>{subtitle}</p>
 			</div>
 		</a>
-	)
-}
+	);
+};

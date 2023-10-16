@@ -12,6 +12,6 @@ Additionally, a local back-end server was created using express.js to debug reCa
 
 **EmailJS:** [EmailJS](https://www.emailjs.com/)
 
-**Used:** React, Express (local backend for reCaptcha testing), Day.js (timers), Pure CSS (but not much), Tailwind, Vite
+**Used:** React, Node.js + Express.js (local backend for reCaptcha testing), Day.js (timers), Pure CSS (but not much), Tailwind, Vite
 
 **URL:** [Portfolio Page](https://konrad-wojtylo.com/)

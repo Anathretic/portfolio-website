@@ -1,6 +1,5 @@
-import { FaSpa } from 'react-icons/fa'
-import { GiEarthAfricaEurope } from 'react-icons/gi'
-import { CiStickyNote } from 'react-icons/ci'
+import { FaSpa } from 'react-icons/fa';
+import { CiStickyNote } from 'react-icons/ci';
 
 export const ExtraData = [
 	{
@@ -14,20 +13,11 @@ export const ExtraData = [
 	},
 	{
 		id: 5,
-		icon: <GiEarthAfricaEurope fontSize={22} />,
-		color: 'bg-[#000000]',
-		title: 'Countrypedia',
-		subtitle:
-			'Web application that allows you to search for the country you are interested in and check information about that country.',
-		href: 'https://countrypedia.online/',
-	},
-	{
-		id: 6,
 		icon: <CiStickyNote fontSize={22} />,
 		color: 'bg-[#CA909A]',
-		title: 'Noteapp',
+		title: 'NoteApp',
 		subtitle:
 			'Web application that allows you to quickly create a note using a popup menu. Data is stored in local storage.',
 		href: 'https://noteapp.online/',
 	},
-]
+];
