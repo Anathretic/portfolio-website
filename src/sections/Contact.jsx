@@ -1,123 +1,72 @@
-import { useEffect, useState, useRef } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import ReCAPTCHA from 'react-google-recaptcha'
-import emailjs from '@emailjs/browser'
-// import axios from 'axios' - only for DEV
-import { InputData } from '../data/InputData'
-import { TextInputData } from '../data/TextInputData'
-import { FormInput, TextInput } from '../components/Inputs'
-import { Loader } from '../components/Loader'
-import { BsCheck2All } from 'react-icons/bs'
+import { useState, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
+
+import { InputData } from '../data/InputData';
+import { TextareaData } from '../data/TextareaData';
+import { FormInput, FormTextarea } from '../components/Inputs';
+import { Loader } from '../components/Loader';
+import { BsCheck2All } from 'react-icons/bs';
+
+import { useContactFormButton } from '../hooks/useContactFormButton';
+import { useContactFormInputs } from '../hooks/useContactFormInputs';
 
 const Contact = () => {
-	const [focused, setFocused] = useState(false)
-	const [isLoading, setIsLoading] = useState(false)
-	const [buttonText, setButtonText] = useState('Send')
-	const [errorValue, setErrorValue] = useState('')
-	const [values, setValues] = useState({
-		username: '',
-		email: '',
-		subject: '',
-	})
-	const [textValue, setTextValue] = useState({
-		message: '',
-	})
+	const [focused, setFocused] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [errorValue, setErrorValue] = useState('');
 
-	const isMobile = useMediaQuery({ query: '(max-width: 500px)' })
-	const refCaptcha = useRef(null)
-	const initialState = 'Send'
+	const [values, setValues, handleInputValue] = useContactFormInputs();
+	const [buttonText, setButtonText] = useContactFormButton();
+	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
 
-	useEffect(() => {
-		if (buttonText !== initialState) {
-			setTimeout(() => setButtonText(initialState), 2500)
-		}
-		return () => clearTimeout(buttonText)
-	}, [buttonText])
-
-	const changeText = () => {
-		setButtonText(<BsCheck2All color='#50eb02' fontSize={24} />)
-	}
+	const refCaptcha = useRef(null);
 
 	const handleSubmit = async e => {
-		e.preventDefault()
+		e.preventDefault();
 
-		setIsLoading(true)
-		const token = await refCaptcha.current.getValue()
-		refCaptcha.current.reset()
+		setIsLoading(true);
+		setErrorValue('');
+		const token = await refCaptcha.current.getValue();
+		refCaptcha.current.reset();
 
 		const params = {
 			...values,
-			...textValue,
 			'g-recaptcha-response': token,
+		};
+
+		if (token) {
+			const sendMsg = emailjs
+				.send(
+					`${import.meta.env.VITE_SERVICE_ID}`,
+					`${import.meta.env.VITE_TEMPLATE_ID}`,
+					params,
+					`${import.meta.env.VITE_PUBLIC_KEY}`
+				)
+				.then(
+					function () {
+						setValues({ username: '', email: '', subject: '', message: '' });
+						setButtonText(<BsCheck2All color='#50eb02' fontSize={24} />);
+					},
+					function () {
+						setErrorValue('Something went wrong..');
+					}
+				)
+				.finally(() => {
+					setFocused(false);
+					setIsLoading(false);
+				});
+			return sendMsg;
+		} else {
+			setIsLoading(false);
+			setErrorValue("Don't be a 🤖!");
 		}
-
-		token
-			? emailjs
-					.send(
-						`${import.meta.env.VITE_SERVICE_ID}`,
-						`${import.meta.env.VITE_TEMPLATE_ID}`,
-						params,
-						`${import.meta.env.VITE_PUBLIC_KEY}`
-					)
-					.then(res => {
-						if (res.status === 200) {
-							setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
-							setFocused(false)
-							setIsLoading(false)
-							setErrorValue('')
-							changeText()
-						}
-					})
-			: setIsLoading(false)
-		setErrorValue("Don't be a 🤖!")
-
-		// DEV ONLY BELOW - LOCAL DEBUG CAPTCHA
-
-		// await axios
-		// 	.post(`http://localhost:${import.meta.env.VITE_PORT}/post`, { token })
-		// 	.then(res => {
-		// 		console.log(res)
-		// 		if (res.data === 'Human 👨 👩') {
-		// 			// DEV
-		// 			//emailjs requires your IDs and keys !!!!!!!
-
-		// 			emailjs
-		// 				.sendForm(
-		// 					`${import.meta.env.VITE_SERVICE_ID}`,
-		// 					`${import.meta.env.VITE_TEMPLATE_ID}`,
-		// 					e.target,
-		// 					`${import.meta.env.VITE_PUBLIC_KEY}`
-		// 				)
-		// 				.then(res => {
-		// 					if (res.status === 200) {
-		// 						setValues({ username: '', email: '', subject: '' }), setTextValue({ message: '' })
-		// 						setFocused(false)
-		// 						setIsLoading(false)
-		// 						setErrorValue('')
-		// 						changeText()
-		// 					}
-		// 				})
-		// 				.catch(error => {
-		// 					console.log(error.text)
-		// 				})
-		// 		} else if (res.data === 'Robot 🤖') {
-		// 			setIsLoading(false)
-		// 			setErrorValue("Don't be a 🤖!")
-		// 		}
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error)
-		// 	})
-	}
-
-	const onChange = e => {
-		setValues({ ...values, [e.target.name]: e.target.value })
-		setTextValue({ ...textValue, [e.target.name]: e.target.value })
-	}
+	};
 
 	const handleFocus = () => {
-		setFocused(true)
-	}
+		setFocused(true);
+	};
 
 	return (
 		<div className='flex w-full justify-center items-center'>
@@ -133,27 +82,26 @@ const Contact = () => {
 						{InputData.map(input => (
 							<FormInput
 								key={input.id}
+								htmlFor={input.name}
 								{...input}
 								value={values[input.name]}
-								onChange={onChange}
+								onChange={handleInputValue}
 								onInvalid={handleFocus}
 								focused={focused.toString()}
 							/>
 						))}
 
-						{TextInputData.map(text => (
-							<TextInput
+						{TextareaData.map(text => (
+							<FormTextarea
 								key={text.id}
+								htmlFor={text.name}
 								{...text}
-								value={textValue[text.name]}
-								onChange={onChange}
+								value={values[text.name]}
+								onChange={handleInputValue}
 								onInvalid={handleFocus}
 								focused={focused.toString()}
 							/>
 						))}
-
-						{/* DEV */}
-						{/* ReCAPTCHA sitekey requires your Google Captcha API Key */}
 
 						<ReCAPTCHA
 							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
@@ -171,7 +119,7 @@ const Contact = () => {
 						) : (
 							<button
 								type='submit'
-								className='flex flex-row justify-center items-center mt-5 mb-3 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white'>
+								className='flex flex-row justify-center items-center mt-5 mb-3 bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white uppercase'>
 								{buttonText}
 							</button>
 						)}
@@ -179,7 +127,7 @@ const Contact = () => {
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Contact
+export default Contact;

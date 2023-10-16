@@ -1,8 +1,10 @@
-import { useState } from 'react'
-import { AiOutlineClose } from 'react-icons/ai'
-import { HiMenuAlt4 } from 'react-icons/hi'
-import { NavbarItem } from '../components/NavbarItem'
-import CurriculumFile from '../../download/curriculum.pdf'
+import { useState } from 'react';
+
+import { AiOutlineClose } from 'react-icons/ai';
+import { HiMenuAlt4 } from 'react-icons/hi';
+
+import { NavbarItem } from '../components/NavbarItem';
+import CurriculumFile from '../../download/curriculum.pdf';
 
 const navbarItems = [
 	{
@@ -17,21 +19,21 @@ const navbarItems = [
 		title: 'policy',
 		section: '/privacy-policy',
 	},
-]
+];
 
 const Navbar = () => {
-	const [toggleMenu, setToggleMenu] = useState(false)
+	const [toggleMenu, setToggleMenu] = useState(false);
 
 	const handleDownload = () => {
-		const link = document.createElement('a')
-		link.download = 'Konrad-Wojtylo-CV'
-		link.href = CurriculumFile
-		link.click()
-	}
+		const link = document.createElement('a');
+		link.download = 'Konrad-Wojtylo-CV';
+		link.href = CurriculumFile;
+		link.click();
+	};
 
 	const handleLogo = () => {
-		window.location.href = '/'
-	}
+		window.location.href = '/';
+	};
 
 	return (
 		<nav className='w-full h-[80px] flex md:justify-center justify-between items-center p-4'>
@@ -48,7 +50,7 @@ const Navbar = () => {
 					<NavbarItem key={title} title={title} section={section} />
 				))}
 				<li
-					className='bg-[#b91c1c] py-2 px-7 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 uppercase z-10'
+					className='bg-[#b91c1c] py-2 px-9 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 uppercase z-10'
 					onClick={handleDownload}>
 					resume
 				</li>
@@ -84,7 +86,7 @@ const Navbar = () => {
 				)}
 			</div>
 		</nav>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;

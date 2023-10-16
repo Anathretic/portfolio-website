@@ -1,6 +1,6 @@
 export const InputData = [
 	{
-		id: 7,
+		id: 'username',
 		name: 'username',
 		type: 'text',
 		placeholder: 'Enter your name..',
@@ -10,7 +10,7 @@ export const InputData = [
 		required: true,
 	},
 	{
-		id: 8,
+		id: 'email',
 		name: 'email',
 		type: 'email',
 		placeholder: 'Enter your e-mail..',
@@ -19,7 +19,7 @@ export const InputData = [
 		required: true,
 	},
 	{
-		id: 9,
+		id: 'subject',
 		name: 'subject',
 		type: 'text',
 		placeholder: 'Enter your subject..',
@@ -28,4 +28,4 @@ export const InputData = [
 		pattern: '^[A-Za-z ]{6,35}$',
 		required: true,
 	},
-]
+];

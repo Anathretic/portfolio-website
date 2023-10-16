@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 export const NavbarItem = ({ title, section, classProps, onClick, ...linkProps }) => {
 	return (
@@ -8,5 +8,5 @@ export const NavbarItem = ({ title, section, classProps, onClick, ...linkProps }
 				{title}
 			</NavLink>
 		</li>
-	)
-}
+	);
+};

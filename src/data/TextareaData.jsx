@@ -1,6 +1,6 @@
-export const TextInputData = [
+export const TextareaData = [
 	{
-		id: 10,
+		id: 'message',
 		name: 'message',
 		type: 'text',
 		placeholder: 'Enter your message..',
@@ -8,4 +8,4 @@ export const TextInputData = [
 		errorMessage: 'Should be 50-1000 characters!',
 		required: true,
 	},
-]
+];
