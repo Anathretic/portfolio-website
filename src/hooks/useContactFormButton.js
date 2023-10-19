@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
- 
+
 export const useContactFormButton = () => {
 	const [buttonText, setButtonText] = useState('Send');
 
@@ -12,5 +12,5 @@ export const useContactFormButton = () => {
 		return () => clearTimeout(buttonText);
 	}, [buttonText]);
 
-    return [buttonText, setButtonText]
+	return [buttonText, setButtonText];
 };
