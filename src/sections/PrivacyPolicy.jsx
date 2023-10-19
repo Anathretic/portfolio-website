@@ -1,4 +1,4 @@
-import { MailToButton } from "../components/MailToButton";
+import { MailToButton } from '../components/MailToButton';
 
 const PrivacyPolicy = () => {
 	const policyBoxStyle = 'p-3 mt-5 max-[360px]:w-full w-9/12 md:w-2/3 lg:w-1/2';
