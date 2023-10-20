@@ -4,8 +4,8 @@ export const CardData = [
 		title: 'Nietypowa-Sowa',
 		countdown: 1692201600000,
 		webHandle: 'https://nietypowa-sowa.pl/',
-		gitHandle: '',
-		text: 'Site of an artist who works extensively in painting. The site has a contact form along with reCaptcha. All done using React. Will be developed.',
+		gitHandle: 'https://github.com/anathretic/nietypowa-sowa',
+		text: 'Website made for a first client, based on a mockup created by a UI designer. The site is fully functional, but descriptions of sample work will be added soon.',
 	},
 	{
 		id: 2,
@@ -13,7 +13,7 @@ export const CardData = [
 		countdown: 1692201600000,
 		webHandle: 'https://countrypedia.online/',
 		gitHandle: 'https://github.com/anathretic/country-app',
-		text: 'A web application to search for a country of interest and check information about it. All done using React (including Context) and of course the Rest API.',
+		text: 'Web application built on a REST API to check information about a country you are interested in. For the sake of your eyes - a dark mode has been added!',
 	},
 	{
 		id: 3,
