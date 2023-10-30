@@ -5,7 +5,7 @@ export const CardData = [
 		countdown: 1692201600000,
 		webHandle: 'https://nietypowa-sowa.pl/',
 		gitHandle: 'https://github.com/anathretic/nietypowa-sowa',
-		text: 'Website made for a first client, based on a mockup created by a UI designer. The site is fully functional, but descriptions of sample work will be added soon.',
+		text: 'Website made for a first client, based on a mockup created by a UI designer. The site is fully functional and allows you to contact the site owner via a form.',
 	},
 	{
 		id: 2,
@@ -18,7 +18,7 @@ export const CardData = [
 	{
 		id: 3,
 		title: 'NoteApp v2.0',
-		countdown: 1698770700000,
+		countdown: 1699632000000,
 		webHandle: '',
 		gitHandle: '',
 		text: '',
