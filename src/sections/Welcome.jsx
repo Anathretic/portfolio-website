@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { CardItem } from '../components/CardItem';
 import { CardData } from '../data/CardData';
+import { scrollToTop } from '../utils/ScrollToTop';
 
 const Welcome = () => {
 	return (
@@ -26,6 +27,7 @@ const Welcome = () => {
 					</div>
 					<Link
 						to='/contact'
+						onClick={scrollToTop}
 						className='flex flex-row justify-center items-center my-5 bg-[#b91c1c] p-3 w-full max-mf:w-9/12 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300'>
 						<p className='text-white text-base uppercase'>Contact</p>
 					</Link>

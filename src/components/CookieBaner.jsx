@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import CookieConsent from 'react-cookie-consent';
 
+import { scrollToTop } from '../utils/ScrollToTop';
+
 export const CookieBaner = ({ ...otherProps }) => {
 	return (
 		<CookieConsent
@@ -27,7 +29,7 @@ export const CookieBaner = ({ ...otherProps }) => {
 			{...otherProps}>
 			<p className='max-[300px]:p-3 p-1'>
 				This site uses cookies only for technical purposes (e.g. google reCaptcha). Learn more from the{' '}
-				<Link to='/privacy-policy' className='text-amber-300 underline'>
+				<Link to='/privacy-policy' onClick={scrollToTop} className='text-amber-300 underline'>
 					privacy policy
 				</Link>
 				.
