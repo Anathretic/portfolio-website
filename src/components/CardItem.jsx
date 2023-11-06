@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getRemainingTimeUntilMsTimestamp } from '../utils/CountdownCardItem';
+import { getRemainingTimeUntilMsTimestamp } from '../utils/countdownTimer';
 
 import { FiChevronsRight } from 'react-icons/fi';
 
@@ -13,16 +13,16 @@ const defaultRemainingTime = {
 export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg, specialText }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
+	const updateRemainingTime = countdown => {
+		setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
+	};
+
 	useEffect(() => {
 		const interval = setInterval(() => {
 			updateRemainingTime(countdownMs);
 		}, 1000);
 		return () => clearInterval(interval);
 	}, [countdownMs]);
-
-	const updateRemainingTime = countdown => {
-		setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
-	};
 
 	return (
 		<div className='w-full'>
