@@ -18,9 +18,10 @@ export const CardData = [
 	{
 		id: 3,
 		title: 'NoteApp v2.0',
-		countdown: 1699632000000,
+		countdown: 1700244000000,
 		webHandle: '',
 		gitHandle: '',
 		text: '',
+		specialText: '*delayed due to waiting for graphics'
 	},
 ];
