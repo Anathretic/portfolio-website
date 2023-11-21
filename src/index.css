@@ -52,6 +52,10 @@ nav {
 	background-image: url('/src/images/countrypedia.jpg');
 }
 
+.card-3 {
+	background-image: url('/src/images/note-app-card.jpg');
+}
+
 .blue-gradient {
 	background: rgba(41, 60, 122, 0.664);
 	border-radius: 16px;

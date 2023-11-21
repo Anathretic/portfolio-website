@@ -17,11 +17,10 @@ export const CardData = [
 	},
 	{
 		id: 3,
-		title: 'NoteApp v2.0',
+		title: 'NoteApp',
 		countdown: 1700244000000,
-		webHandle: '',
-		gitHandle: '',
-		text: '',
-		specialText: '*delayed due to waiting for graphics'
+		webHandle: 'https://noteapp.online/',
+		gitHandle: 'https://github.com/anathretic/firebase-note-app',
+		text: 'Web application that allows you to create notes. The whole thing works in sync with firebase and all data is stored in a NoSQL database. Feel free to use!',
 	},
 ];
