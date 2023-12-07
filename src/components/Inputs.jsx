@@ -22,7 +22,7 @@ export const FormTextarea = ({ label, htmlFor, onChange, errorMessage, ...textar
 			<textarea
 				className={`min-h-[96px] max-h-[256px] ${inputStyles}`}
 				onChange={onChange}
-				minLength={50}
+				minLength={5}
 				maxLength={1000}
 				autoComplete='off'
 				{...textareaProps}
