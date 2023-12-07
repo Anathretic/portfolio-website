@@ -5,7 +5,7 @@ export const TextareaData = [
 		type: 'text',
 		placeholder: 'Enter your message..',
 		label: 'Message',
-		errorMessage: 'Write something! But no more than 150 words..',
+		errorMessage: 'No more than 150 words..',
 		required: true,
 	},
 ];

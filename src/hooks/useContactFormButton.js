@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-export const useContactFormButton = () => {
-	const [buttonText, setButtonText] = useState('Send');
+const initialState = 'Send';
 
-	const initialState = 'Send';
+export const useContactFormButton = () => {
+	const [buttonText, setButtonText] = useState(initialState);
 
 	useEffect(() => {
 		if (buttonText !== initialState) {
