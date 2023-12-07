@@ -1,11 +1,11 @@
 module.exports = {
-	purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+	content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
 	mode: 'jit',
-	darkMode: false,
 	theme: {
 		extend: {
 			screens: {
 				rsm: '350px',
+				mobile: '500px',
 				mf: '990px',
 			},
 			keyframes: {
@@ -28,4 +28,4 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-}
+};

@@ -24,7 +24,7 @@ export const InputData = [
 		type: 'text',
 		placeholder: 'Enter your subject..',
 		label: 'Subject',
-		errorMessage: "It's too short, or too long!",
+		errorMessage: "Too short, or too long!",
 		pattern: '^[A-Za-z ]{6,35}$',
 		required: true,
 	},
