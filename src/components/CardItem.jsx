@@ -32,7 +32,7 @@ export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg
 				}`}>
 				{webHandle && (
 					<a
-						className='w-12 h-14 rounded-full border-2 border-white flex justify-center items-center text-white cursor-pointer hover:bg-[#b91c1c] transition duration-300'
+						className='w-12 h-14 rounded-full border-2 border-white flex justify-center items-center text-white hover:bg-[#b91c1c] transition duration-300'
 						href={webHandle}
 						target='_blank'
 						rel='noreferrer'>
@@ -68,7 +68,7 @@ export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg
 				<div className='h-[1px] w-full bg-gray-400 my-2'></div>
 				<a
 					className={`py-3 px-16 mt-3 rounded-full 
-						${gitHandle ? 'bg-[#b91c1c] cursor-pointer hover:bg-[#7f1d1d] transition duration-300' : 'bg-[#666666]'}`}
+						${gitHandle ? 'bg-[#b91c1c] hover:bg-[#7f1d1d] transition duration-300' : 'bg-[#666666]'}`}
 					href={gitHandle ? gitHandle : void 0}
 					target='_blank'
 					rel='noreferrer'>

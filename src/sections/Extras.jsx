@@ -17,7 +17,6 @@ const Extras = () => {
 					<ExtraItem
 						key={data.id + data.title}
 						icon={data.icon}
-						color={data.color}
 						title={data.title}
 						subtitle={data.subtitle}
 						href={data.href}

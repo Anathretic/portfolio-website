@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Navbar, Welcome, Footer, Extras, Contact, PageNotFound, PrivacyPolicy } from './sections';
+import { Navbar, Welcome, Footer, Extras, Contact, PageNotFound, PrivacyPolicy, TechStack } from './sections';
 import { CookieBaner } from './components/CookieBaner';
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
 						element={
 							<>
 								<Welcome />
+								<TechStack />
 								<Extras />
 							</>
 						}

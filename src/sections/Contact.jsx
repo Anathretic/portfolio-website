@@ -117,7 +117,7 @@ const Contact = () => {
 							) : (
 								<button
 									type='submit'
-									className='flex justify-center bg-[#b91c1c] p-3 w-32 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 text-white uppercase'>
+									className='flex justify-center bg-[#b91c1c] p-3 w-32 rounded-full hover:bg-[#7f1d1d] transition duration-300 text-white uppercase'>
 									{buttonText}
 								</button>
 							)}
