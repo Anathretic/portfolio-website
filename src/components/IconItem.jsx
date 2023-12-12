@@ -1,7 +1,25 @@
-export const IconItem = ({ icon }) => {
+import { useState, useEffect } from 'react';
+
+export const IconItem = ({ icon, color, link, timeout }) => {
+	const [counter, setCounter] = useState(0);
+
+	useEffect(() => {
+		const counterInterval = setInterval(() => {
+			setCounter(counter + 1);
+		}, timeout);
+
+		return () => clearInterval(counterInterval);
+	}, [counter]);
+
 	return (
-		<div className='m-2 p-4 white-gradient text-white/25 cursor-pointer hover:text-[#b91c1c] transition duration-300'>
+		<a
+			href={link}
+			target='_blank'
+			rel='noreferrer'
+			className={`m-2 p-4 white-gradient transition duration-300 hover:${color} ${
+				counter % 2 === 0 ? 'text-white/25' : color
+			}`}>
 			{icon}
-		</div>
+		</a>
 	);
 };
