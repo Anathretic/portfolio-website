@@ -11,11 +11,11 @@ const App = () => {
 					<Route
 						path='/'
 						element={
-							<>
+							<main>
 								<Welcome />
 								<TechStack />
 								<Extras />
-							</>
+							</main>
 						}
 					/>
 					<Route
