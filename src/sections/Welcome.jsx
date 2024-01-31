@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-
 import { CardItem } from '../components/CardItem';
-import { CardData } from '../data/CardData';
-import { scrollToTop } from '../utils/ScrollToTop';
+import { cardData } from '../data/cardData';
+import { scrollToTop } from '../utils/scrollToTop';
 
 const Welcome = () => {
 	return (
@@ -33,7 +32,7 @@ const Welcome = () => {
 					</Link>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-18 lg:ml-20 mt-10'>
-					{CardData.map(data => (
+					{cardData.map(data => (
 						<CardItem
 							key={data.id + data.title}
 							title={data.title}

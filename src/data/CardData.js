@@ -1,26 +1,26 @@
-export const CardData = [
+export const cardData = [
 	{
 		id: 1,
 		title: 'Nietypowa-Sowa',
 		countdown: 1692201600000,
 		webHandle: 'https://nietypowa-sowa.pl/',
 		gitHandle: 'https://github.com/anathretic/nietypowa-sowa',
-		text: 'Website made for a first client, based on a mockup created by a UI designer. The site is fully functional and allows you to contact the site owner via a form.',
+		text: 'Website made for a first client, based on a mockup created by a UI designer. The site is fully functional (thanks to useParams!) and has a really nice contact form.',
 	},
 	{
 		id: 2,
-		title: 'Countrypedia',
-		countdown: 1692201600000,
-		webHandle: 'https://countrypedia.online/',
-		gitHandle: 'https://github.com/anathretic/country-app',
-		text: 'Web application built on a REST API to check information about a country you are interested in. For the sake of your eyes - a dark mode has been added!',
+		title: 'Świat-Anny',
+		countdown: 1706871600000,
+		webHandle: '',
+		gitHandle: '',
+		text: '',
 	},
 	{
 		id: 3,
-		title: 'NoteApp',
-		countdown: 1700244000000,
-		webHandle: 'https://noteapp.online/',
-		gitHandle: 'https://github.com/anathretic/firebase-note-app',
-		text: 'Web application that allows you to create notes. The whole thing works in sync with firebase and all data is stored in a NoSQL database. Feel free to use!',
+		title: 'ComicApp',
+		countdown: 1711983600000,
+		webHandle: '',
+		gitHandle: '',
+		text: '',
 	},
 ];
