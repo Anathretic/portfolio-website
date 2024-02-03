@@ -11,9 +11,9 @@ export const cardData = [
 		id: 2,
 		title: 'Świat-Anny',
 		countdown: 1706871600000,
-		webHandle: '',
-		gitHandle: '',
-		text: '',
+		webHandle: 'https://swiat-anny.pl/',
+		gitHandle: 'https://github.com/Anathretic/swiat-anny',
+		text: 'Website made for an artist which deals with modern art in its broadest sense. The project has allowed me to extend my tech-stack with GraphQL and Supabase!',
 	},
 	{
 		id: 3,

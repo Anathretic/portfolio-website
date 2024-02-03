@@ -25,7 +25,7 @@ export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg
 	}, [countdownMs]);
 
 	return (
-		<div className='w-full'>
+		<div className='w-full max-sm:max-w-[350px]'>
 			<div
 				className={`p-3 flex justify-end items-end flex-col rounded-xl h-60 sm:w-96 my-3 ${
 					webHandle ? `card-${bgImg}` : 'card animate-pulse'
