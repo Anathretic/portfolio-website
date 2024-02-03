@@ -62,11 +62,7 @@ body {
 }
 
 .card-2 {
-	background-image: url('/src/images/countrypedia.jpg');
-}
-
-.card-3 {
-	background-image: url('/src/images/note-app-card.jpg');
+	background-image: url('/src/images/swiat-anny-card.jpg');
 }
 
 .active {

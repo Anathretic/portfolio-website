@@ -2,7 +2,19 @@ import { IconItem } from '../components/IconItem';
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaNodeJs, FaBootstrap, FaGulp, FaFigma, FaNpm } from 'react-icons/fa';
 import { RiJavascriptFill } from 'react-icons/ri';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { SiRedux, SiTailwindcss, SiMui, SiWebpack, SiVite, SiJest, SiFirebase } from 'react-icons/si';
+import {
+	SiRedux,
+	SiTailwindcss,
+	SiMui,
+	SiWebpack,
+	SiVite,
+	SiJest,
+	SiFirebase,
+	SiGraphql,
+	SiStrapi,
+	SiYarn,
+	SiSupabase,
+} from 'react-icons/si';
 
 export const TechStackIcons = [
 	{
@@ -44,9 +56,13 @@ export const TechStackIcons = [
 	{ id: 62, icon: <FaGulp />, color: 'text-[#de4747]', link: 'https://gulpjs.com/', timeout: 3250 },
 	{ id: 63, icon: <SiWebpack />, color: 'text-[#1938b5]', link: 'https://webpack.js.org/', timeout: 900 },
 	{ id: 64, icon: <SiJest />, color: 'text-[#4c0252]', link: 'https://jestjs.io/', timeout: 1300 },
-	{ id: 65, icon: <SiFirebase />, color: 'text-[#dbbe02]', link: 'https://firebase.google.com/', timeout: 1650 },
-	{ id: 66, icon: <FaFigma />, color: 'text-[#bd1c00]', link: 'https://www.figma.com/', timeout: 1900 },
-	{ id: 67, icon: <FaNpm />, color: 'text-[#991a1a]', link: 'https://www.npmjs.com/', timeout: 1450 },
+	{ id: 65, icon: <SiStrapi />, color: 'text-[#4945ff]', link: 'https://strapi.io/', timeout: 1500 },
+	{ id: 66, icon: <SiFirebase />, color: 'text-[#dbbe02]', link: 'https://firebase.google.com/', timeout: 1650 },
+	{ id: 67, icon: <SiSupabase />, color: 'text-[#3ecfb2]', link: 'https://supabase.com/', timeout: 1150 },
+	{ id: 68, icon: <SiGraphql />, color: 'text-[#f6009c]', link: 'https://graphql.org/', timeout: 950 },
+	{ id: 69, icon: <FaFigma />, color: 'text-[#bd1c00]', link: 'https://www.figma.com/', timeout: 1900 },
+	{ id: 70, icon: <FaNpm />, color: 'text-[#991a1a]', link: 'https://www.npmjs.com/', timeout: 1450 },
+	{ id: 71, icon: <SiYarn />, color: 'text-[#58326e]', link: 'https://yarnpkg.com/', timeout: 1950 },
 ];
 
 const TechStack = () => {
