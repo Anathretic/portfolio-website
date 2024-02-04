@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { CardItem } from '../components/CardItem';
-import { cardData } from '../data/cardData';
 import { scrollToTop } from '../utils/scrollToTop';
+import { useCardsQuery } from '../hooks/useCardsQuery';
+import { Loader } from '../components/Loader';
 
 const Welcome = () => {
+	const { data, isLoading, isError } = useCardsQuery();
+
 	return (
 		<div className='flex w-full justify-center items-center'>
 			<div className='flex mf:flex-row flex-col items-center mf:items-start justify-between md:p-20 py-12 px-4'>
@@ -32,18 +35,25 @@ const Welcome = () => {
 					</Link>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full sm:w-96 mf:mt-0 mf:ml-18 lg:ml-20 mt-10'>
-					{cardData.map(data => (
-						<CardItem
-							key={data.id + data.title}
-							title={data.title}
-							countdownMs={data.countdown}
-							webHandle={data.webHandle}
-							gitHandle={data.gitHandle}
-							text={data.text}
-							bgImg={data.id}
-							specialText={data.specialText}
-						/>
-					))}
+					{isLoading ? (
+						<Loader className='flex items-center min-h-[600px]' />
+					) : data ? (
+						data.map(card => (
+							<CardItem
+								key={card.id + card.title}
+								title={card.title}
+								countdown={card.countdown}
+								webHandle={card.webHandle}
+								gitHandle={card.gitHandle}
+								text={card.text}
+								imageID={card.imageID}
+							/>
+						))
+					) : isError ? (
+						<p className='flex items-center min-h-[600px] text-white xl:ml-12'>An error occured! Refresh the page..</p>
+					) : (
+						''
+					)}
 				</div>
 			</div>
 		</div>

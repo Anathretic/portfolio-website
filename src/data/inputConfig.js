@@ -1,4 +1,4 @@
-export const inputData = [
+export const inputConfig = [
 	{
 		id: 'username',
 		name: 'username',
