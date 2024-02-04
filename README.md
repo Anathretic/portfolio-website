@@ -16,14 +16,15 @@ The second problem, or rather number of solutions, arose when I decided to set u
 
 - Creating reusable components that can be used in another projects ([nietypowa-sowa](https://github.com/anathretic/nietypowa-sowa)),
 - Creating my own hooks - consolidation of destructuring,
+- Using Supabase with react-query,
 - A broader understanding of how everything works underneath
 
 The code is refactored and divided into components and custom hooks.
 
 ## Links & Tools
 
-**Used:** HTML, CSS, JavaScript (incl. DayJS library), React, Node + Express, Tailwind, Vite
+**Used:** HTML, CSS, JavaScript (incl. DayJS library), React, React-Query, Node + Express, Tailwind, Vite
 
-**Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/)
+**Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/), [Supabase](https://supabase.com/)
 
 **URL:** [Portfolio Page](https://konrad-wojtylo.com/)
