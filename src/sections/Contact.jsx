@@ -2,15 +2,13 @@ import { useState, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
-
-import { inputData } from '../data/inputData';
-import { textareaData } from '../data/textareaData';
+import { inputConfig } from '../data/inputConfig';
+import { textareaConfig } from '../data/textareaConfig';
 import { FormInput, FormTextarea } from '../components/Inputs';
 import { Loader } from '../components/Loader';
-import { BsCheck2All } from 'react-icons/bs';
-
 import { useContactFormButton } from '../hooks/useContactFormButton';
 import { useContactFormInputs } from '../hooks/useContactFormInputs';
+import { BsCheck2All } from 'react-icons/bs';
 
 const Contact = () => {
 	const [focused, setFocused] = useState(false);
@@ -77,7 +75,7 @@ const Contact = () => {
 						className='px-5 py-2 sm:w-96 mf:w-[500px] w-full flex flex-col justify-start items-center blue-gradient mt-10'>
 						<h3 className='p-5 text-2xl text-white text-gradient text-center'>Contact me!</h3>
 						<div className='h-[1px] w-full bg-gray-400 my-1' />
-						{inputData.map(input => (
+						{inputConfig.map(input => (
 							<FormInput
 								key={input.id}
 								htmlFor={input.name}
@@ -88,7 +86,7 @@ const Contact = () => {
 								focused={focused.toString()}
 							/>
 						))}
-						{textareaData.map(text => (
+						{textareaConfig.map(text => (
 							<FormTextarea
 								key={text.id}
 								htmlFor={text.name}

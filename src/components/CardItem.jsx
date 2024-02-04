@@ -10,7 +10,7 @@ const defaultRemainingTime = {
 	days: '00',
 };
 
-export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg, specialText }) => {
+export const CardItem = ({ title, webHandle, gitHandle, countdown, text, imageID }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
 	const updateRemainingTime = countdown => {
@@ -19,16 +19,16 @@ export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			updateRemainingTime(countdownMs);
+			updateRemainingTime(countdown);
 		}, 1000);
 		return () => clearInterval(interval);
-	}, [countdownMs]);
+	}, [countdown]);
 
 	return (
 		<div className='w-full max-sm:max-w-[350px]'>
 			<div
 				className={`p-3 flex justify-end items-end flex-col rounded-xl h-60 sm:w-96 my-3 ${
-					webHandle ? `card-${bgImg}` : 'card animate-pulse'
+					webHandle ? `card-${imageID}` : 'card animate-pulse'
 				}`}>
 				{webHandle && (
 					<a
@@ -61,7 +61,6 @@ export const CardItem = ({ title, webHandle, gitHandle, countdownMs, text, bgImg
 								<span>:</span>
 								<span className='date-span'>{remainingTime.seconds}</span>
 							</div>
-							<p className='flex justify-center italic text-center font-light'>{specialText}</p>
 						</>
 					)}
 				</div>
