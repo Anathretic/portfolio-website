@@ -33,6 +33,10 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+.icon-default-color {
+	color: rgba(255, 255, 255, 0.25);
+}
+
 .blue-gradient {
 	background: rgba(41, 60, 122, 0.664);
 	border-radius: 16px;
@@ -63,11 +67,11 @@ body {
 }
 
 .card-1 {
-	background-image: url('./images/nietypowa-card.png');
+	background-image: url('./images/nietypowa-sowa-card.jpg');
 }
 
 .card-2 {
-	background-image: url('./images/swiat-anny-card.png');
+	background-image: url('./images/swiat-anny-card.jpg');
 }
 
 .active {
