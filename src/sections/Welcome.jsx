@@ -41,7 +41,6 @@ const Welcome = () => {
 						data.map(card => (
 							<CardItem
 								key={card.id + card.title}
-								title={card.title}
 								countdown={card.countdown}
 								webHandle={card.webHandle}
 								gitHandle={card.gitHandle}
