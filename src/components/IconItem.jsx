@@ -17,8 +17,8 @@ export const IconItem = ({ icon, color, link, timeout }) => {
 			href={link}
 			target='_blank'
 			rel='noreferrer'
-			className={`m-2 p-4 white-gradient transition duration-300 ${
-				hover ? `${color}` : counter % 2 === 0 ? 'text-white/25' : `${color}`
+			className={`m-2 p-4 transition duration-300 ${!hover && 'white-gradient'} ${
+				hover ? `${color} blue-gradient` : counter % 2 === 0 ? 'icon-default-color' : `${color}`
 			}`}
 			onMouseOver={() => setHover(true)}
 			onMouseOut={() => setHover(false)}>

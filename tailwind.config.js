@@ -24,6 +24,9 @@ module.exports = {
 			animation: {
 				'slide-in': 'slide-in 0.5s ease-out',
 			},
+			boxShadow: {
+				custom: '3px 5px 20px rgba(0, 0, 0, 0.2)',
+			},
 		},
 	},
 	variants: {
