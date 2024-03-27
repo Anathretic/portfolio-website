@@ -17,7 +17,7 @@ const Welcome = () => {
 						Fancy gradients!
 					</h1>
 					<div className='text-left mt-5 text-white font-light text-base max-[350px]:text-left text-center mf:text-left'>
-						<p className='mt-2'>Currently working on several commercial projects..</p>
+						<p className='mt-2'>Currently working on a project with small team..</p>
 						<br />
 						<p>But I am still looking for a full time job!</p>
 						<br />
