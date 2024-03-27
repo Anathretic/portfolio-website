@@ -8,7 +8,7 @@ export const extraData = [
 		icon: Globe,
 		title: 'Countrypedia',
 		subtitle:
-			'Web application built on a REST API to check information about a country you are interested in. For the sake of your eyes - a dark mode has been added!',
+			'Simple app built on a REST API to check information about a country you are interested in. For the sake of your eyes - a dark mode has been added!',
 		href: 'https://countrypedia.online/',
 	},
 	{
@@ -24,7 +24,7 @@ export const extraData = [
 		icon: StarWars,
 		title: 'Star Wars & Calculator',
 		subtitle:
-			'Web application that demonstrates the use of Next.js with Cypress and SWR for data fetching. It is split into 2 parts, allowing the use of component testing as well as E2E tests.',
+			'A demonstration of the use of Next.js with Cypress and SWR for data fetching. It is split into 2 parts, allowing the use of component testing as well as E2E tests.',
 		href: 'https://star-wars-and-calculator-app.vercel.app/',
 	},
 ];
