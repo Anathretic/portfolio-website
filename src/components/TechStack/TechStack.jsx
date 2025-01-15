@@ -1,4 +1,4 @@
-import { IconItem } from '../components/IconItem';
+import { TechStackIconItem } from './components/TechStackIconItem';
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaNodeJs, FaBootstrap, FaGulp, FaFigma, FaNpm } from 'react-icons/fa';
 import { RiJavascriptFill } from 'react-icons/ri';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -83,7 +83,13 @@ const TechStack = () => {
 				</div>
 				<div className='flex flex-wrap justify-center text-8xl sm:w-9/12 max-w-[900px]'>
 					{TechStackIcons.map(data => (
-						<IconItem key={data.color + data.timeout} icon={data.icon} color={data.color} link={data.link} timeout={data.timeout} />
+						<TechStackIconItem
+							key={data.color + data.timeout}
+							icon={data.icon}
+							color={data.color}
+							link={data.link}
+							timeout={data.timeout}
+						/>
 					))}
 				</div>
 				<p className='pt-6 text-white'>* but I use many more!</p>

@@ -1,7 +1,7 @@
-import { ExtraItem } from '../components/ExtraItem';
-import { extraData } from '../data/extraData';
+import { OwnProjectsItem } from './components/OwnProjectsItem';
+import { ownProjectsConfigData } from '../../configData/ownProjectsConfigData';
 
-const Extras = () => {
+const OwnProjects = () => {
 	return (
 		<div className='flex flex-col w-full justify-center items-center'>
 			<div className='flex flex-col items-center justify-between md:p-20 py-12 px-4'>
@@ -13,8 +13,8 @@ const Extras = () => {
 				</div>
 			</div>
 			<div className='flex-1 flex flex-col justify-start items-center'>
-				{extraData.map(data => (
-					<ExtraItem
+				{ownProjectsConfigData.map(data => (
+					<OwnProjectsItem
 						key={data.id + data.title}
 						icon={data.icon}
 						title={data.title}
@@ -27,4 +27,4 @@ const Extras = () => {
 	);
 };
 
-export default Extras;
+export default OwnProjects;

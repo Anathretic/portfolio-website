@@ -1,6 +1,15 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { Navbar, Welcome, Footer, Extras, Contact, PageNotFound, PrivacyPolicy, TechStack } from './sections';
-import { CookieBaner } from './components/CookieBaner';
+import {
+	Navbar,
+	Welcome,
+	TechStack,
+	OwnProjects,
+	Footer,
+	Contact,
+	PrivacyPolicy,
+	PageNotFound,
+	CookieBanner,
+} from './components';
 
 const App = () => {
 	return (
@@ -13,7 +22,7 @@ const App = () => {
 								<Navbar />
 								<Outlet />
 								<Footer />
-								<CookieBaner />
+								<CookieBanner />
 							</>
 						}>
 						<Route
@@ -22,7 +31,7 @@ const App = () => {
 								<>
 									<Welcome />
 									<TechStack />
-									<Extras />
+									<OwnProjects />
 								</>
 							}
 						/>

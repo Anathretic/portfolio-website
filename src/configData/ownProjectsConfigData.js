@@ -1,9 +1,9 @@
 import Globe from '../images/icons/globe.svg';
 import Note from '../images/icons/note.svg';
 
-export const extraData = [
+export const ownProjectsConfigData = [
 	{
-		id: 4,
+		id: 1,
 		icon: Globe,
 		title: 'Countrypedia',
 		subtitle:
@@ -11,7 +11,7 @@ export const extraData = [
 		href: 'https://countrypedia-project.vercel.app/',
 	},
 	{
-		id: 5,
+		id: 2,
 		icon: Note,
 		title: 'NoteApp',
 		subtitle:

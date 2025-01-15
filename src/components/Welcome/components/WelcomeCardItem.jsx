@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getRemainingTimeUntilMsTimestamp } from '../utils/countdownTimer';
+import { getRemainingTimeUntilMsTimestamp } from '../../../utils/countdownTimer';
 
 import { FiChevronsRight } from 'react-icons/fi';
 
@@ -10,7 +10,7 @@ const defaultRemainingTime = {
 	days: '00',
 };
 
-export const CardItem = ({ webHandle, gitHandle, countdown, text, imageID }) => {
+export const WelcomeCardItem = ({ webHandle, gitHandle, countdown, text, imageID }) => {
 	const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
 	const updateRemainingTime = countdown => {

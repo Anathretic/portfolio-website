@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const IconItem = ({ icon, color, link, timeout }) => {
+export const TechStackIconItem = ({ icon, color, link, timeout }) => {
 	const [counter, setCounter] = useState(0);
 	const [hover, setHover] = useState(false);
 
