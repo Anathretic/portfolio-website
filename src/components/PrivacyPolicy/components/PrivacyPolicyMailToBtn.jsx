@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const MailToButton = ({ mailto, label, classProps, ...otherProps }) => {
+export const PrivacyPolicyMailToBtn = ({ mailto, label, classProps, ...otherProps }) => {
 	const handleMailto = e => {
 		e.preventDefault();
 		window.location.href = mailto;

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { CardItem } from '../components/CardItem';
-import { scrollToTop } from '../utils/scrollToTop';
-import { useCardsQuery } from '../hooks/useCardsQuery';
-import { Loader } from '../components/Loader';
+import { WelcomeCardItem } from './components/WelcomeCardItem';
+import { Loader } from '../OtherComponents/Loader';
+import { useCardsQuery } from '../../hooks/useCardsQuery';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 const Welcome = () => {
 	const { data, isLoading, isError } = useCardsQuery();
@@ -39,7 +39,7 @@ const Welcome = () => {
 						<Loader className='flex items-center min-h-[600px]' />
 					) : data ? (
 						data.map(card => (
-							<CardItem
+							<WelcomeCardItem
 								key={card.id}
 								countdown={card.countdown}
 								webHandle={card.webHandle}

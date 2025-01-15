@@ -1,8 +1,7 @@
 import { useState } from 'react';
+import { NavbarItem } from './components/NavbarItem';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
-import { NavbarItem } from '../components/NavbarItem';
-import CurriculumFile from '../../download/curriculum.pdf';
 
 const navbarItems = [
 	{
@@ -21,13 +20,6 @@ const navbarItems = [
 
 const Navbar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
-
-	const handleDownload = () => {
-		const link = document.createElement('a');
-		link.download = 'Konrad-Wojtylo-CV';
-		link.href = CurriculumFile;
-		link.click();
-	};
 
 	const handleLogo = () => {
 		window.location.href = '/';
@@ -49,10 +41,14 @@ const Navbar = () => {
 						{navbarItems.map(({ title, section }) => (
 							<NavbarItem key={title} title={title} section={section} />
 						))}
-						<li
-							className='bg-[#b91c1c] py-2 px-9 ml-4 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 uppercase z-10'
-							onClick={handleDownload}>
-							resume
+						<li className='ml-4'>
+							<a
+								className='bg-[#b91c1c] py-3 px-7 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 z-10'
+								href='https://www.linkedin.com/in/konrad-wojtylo'
+								target='_blank'
+								rel='noreferrer'>
+								LinkedIn
+							</a>
 						</li>
 					</ul>
 				</nav>
@@ -79,10 +75,14 @@ const Navbar = () => {
 										onClick={() => setToggleMenu(false)}
 									/>
 								))}
-								<li
-									className='bg-[#b91c1c] p-3 px-7 mx-4 my-3 rounded-full cursor-pointer uppercase self-center'
-									onClick={handleDownload}>
-									resume
+								<li className='mt-4'>
+									<a
+										className='bg-[#b91c1c] py-3 px-9 rounded-full cursor-pointer hover:bg-[#7f1d1d] transition duration-300 z-10'
+										href='https://www.linkedin.com/in/konrad-wojtylo'
+										target='_blank'
+										rel='noreferrer'>
+										LinkedIn
+									</a>
 								</li>
 							</ul>
 						</nav>

@@ -1,4 +1,4 @@
-export const ExtraItem = ({ title, icon, subtitle, href, ...otherProps }) => {
+export const OwnProjectsItem = ({ title, icon, subtitle, href, ...otherProps }) => {
 	return (
 		<a
 			href={href}
