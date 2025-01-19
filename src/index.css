@@ -42,7 +42,7 @@ body {
 }
 
 .blue-gradient {
-	background: rgba(41, 60, 122, 0.664);
+	background: rgba(41, 60, 122, 0.663);
 	border-radius: 16px;
 	box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(5px);
@@ -76,10 +76,6 @@ body {
 
 .card-2 {
 	background-image: url('./images/swiat-anny-card.jpg');
-}
-
-.active {
-	color: #ef4444;
 }
 
 form span {

@@ -69,13 +69,20 @@ const Contact = () => {
 	};
 
 	return (
-		<div className='flex w-full justify-center items-center'>
-			<div className='flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4 w-full'>
-				<div className='flex flex-col flex-1 items-center justify-start w-full mobile:w-96 mf:mt-0 mt-10'>
+		<div id='contact' className='flex w-full justify-center items-center'>
+			<div className='flex flex-col items-center justify-between px-4 w-full'>
+				<div className='flex flex-col items-center justify-between md:p-20 py-12 px-4'>
+					<div className='flex-1 flex flex-col justify-start items-start'>
+						<h2 className='text-white text-3xl sm:text-5xl py-2 text-gradient text-center'>
+							Write to me.. <br /> if you want
+						</h2>
+					</div>
+				</div>
+				<div className='flex flex-col flex-1 items-center justify-start w-full mf:mt-0 mt-10'>
 					<form
 						onSubmit={handleSubmit}
-						className='px-5 py-2 sm:w-96 mf:w-[500px] w-full flex flex-col justify-start items-center blue-gradient mt-10'>
-						<h3 className='p-5 text-2xl text-white text-gradient text-center'>Contact me!</h3>
+						className='px-5 py-2 sm:w-96 mf:w-[500px] w-full flex flex-col justify-start items-center blue-gradient mt-10 mf:mt-0'>
+						<h3 className='p-5 text-2xl text-white text-gradient text-center'>Contact</h3>
 						<div className='h-[1px] w-full bg-gray-400 my-1' />
 						{contactFormInputConfigData.map(input => (
 							<FormInput

@@ -71,7 +71,7 @@ export const TechStackIcons = [
 
 const TechStack = () => {
 	return (
-		<div className='flex flex-col w-full justify-center items-center'>
+		<div id='tech-stack' className='flex flex-col w-full justify-center items-center'>
 			<div className='flex-1 flex flex-col w-full justify-start items-center'>
 				<div className='w-[90%] h-[1px] bg-gray-400 mt-3' />
 				<div className='flex flex-col items-center justify-between md:p-20 py-12 px-4'>
