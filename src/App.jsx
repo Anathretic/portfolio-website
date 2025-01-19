@@ -32,10 +32,10 @@ const App = () => {
 									<Welcome />
 									<TechStack />
 									<OwnProjects />
+									<Contact />
 								</>
 							}
 						/>
-						<Route path='/contact' element={<Contact />} />
 						<Route path='/privacy-policy' element={<PrivacyPolicy />} />
 						<Route path='*' element={<PageNotFound />} />
 					</Route>
