@@ -11,7 +11,7 @@ const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 
 	const handleScroll = () => {
-		if (window.scrollY > 80) {
+		if (window.scrollY > 60) {
 			setIsScrolled(true);
 		} else {
 			setIsScrolled(false);
@@ -53,16 +53,14 @@ const Navbar = () => {
 					</ul>
 				</nav>
 				<div className='flex relative'>
-					{toggleMenu || (
-						<HiMenuAlt4
-							fontSize={32}
-							className='text-white mf:hidden cursor-pointer'
-							onClick={() => setToggleMenu(true)}
-						/>
-					)}
+					<HiMenuAlt4
+						fontSize={32}
+						className='text-white mf:hidden block cursor-pointer'
+						onClick={() => setToggleMenu(true)}
+					/>
 					{toggleMenu && (
 						<nav>
-							<ul className='z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl mf:hidden list-none flex flex-col justify-start items-center rounded-md text-white bg-black animate-slide-in'>
+							<ul className='z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl mf:hidden list-none flex flex-col justify-start items-center rounded-md text-white bg-[#141d3bfb] animate-slide-in'>
 								<li className='text-xl self-start my-2 cursor-pointer'>
 									<AiOutlineClose fontSize={28} onClick={() => setToggleMenu(false)} />
 								</li>
@@ -83,7 +81,7 @@ const Navbar = () => {
 										scrollToTop();
 									}}
 								/>
-								<li className='mt-4'>
+								<li>
 									<a
 										className='p-1 hover:text-red-500 transition duration-300'
 										href='https://www.linkedin.com/in/konrad-wojtylo'

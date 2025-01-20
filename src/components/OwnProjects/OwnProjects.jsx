@@ -1,6 +1,8 @@
 import { OwnProjectsItem } from './components/OwnProjectsItem';
 import { ownProjectsConfigData } from '../../configData/ownProjectsConfigData';
 
+import { FaFish, FaFishFins } from 'react-icons/fa6';
+
 const OwnProjects = () => {
 	return (
 		<div id='other' className='flex flex-col w-full justify-center items-center'>
@@ -12,16 +14,22 @@ const OwnProjects = () => {
 					</h2>
 				</div>
 			</div>
-			<div className='flex-1 flex flex-col justify-start items-center'>
-				{ownProjectsConfigData.map(data => (
-					<OwnProjectsItem
-						key={data.id + data.title}
-						icon={data.icon}
-						title={data.title}
-						subtitle={data.subtitle}
-						href={data.href}
-					/>
-				))}
+			<div className='relative flex-1 flex flex-col justify-start items-center'>
+				<div className='relative flex-1 flex flex-col justify-start items-center z-20'>
+					{ownProjectsConfigData.map(data => (
+						<OwnProjectsItem
+							key={data.id + data.title}
+							icon={data.icon}
+							title={data.title}
+							subtitle={data.subtitle}
+							href={data.href}
+						/>
+					))}
+				</div>
+				<FaFish className='absolute left-4 top-8 z-10' color='#83838398' fontSize={48} />
+				<FaFishFins className='absolute left-12 bottom-16 z-10' color='#83838398' fontSize={40} />
+				<FaFishFins className='absolute right-0 bottom-10 z-10' color='#83838398' fontSize={32} />
+				<FaFish className='absolute right-10 top-20 z-10' color='#83838398' fontSize={42} />
 			</div>
 			<div className='w-[90%] h-[1px] bg-gray-400 mt-24' />
 		</div>
