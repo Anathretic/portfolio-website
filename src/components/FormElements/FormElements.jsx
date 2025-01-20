@@ -1,3 +1,6 @@
+import ReCAPTCHA from 'react-google-recaptcha';
+import { Loader } from '../OtherComponents/Loader';
+
 const inputStyles =
 	'my-1 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-gradient';
 
@@ -28,6 +31,38 @@ export const FormTextarea = ({ label, htmlFor, onChange, errorMessage, ...textar
 				{...textareaProps}
 			/>
 			<span className='text-center h-12 mobile:h-6 text-[#ef4444]'>{errorMessage}</span>
+		</div>
+	);
+};
+
+export const FormReCaptchaV2 = ({ isMobile, refCaptcha, recaptchaErrorValue }) => {
+	return (
+		<div className={`${isMobile ? 'h-48 mt-3' : 'h-32 mt-6'} md:ml-0.5 ml-1.5`}>
+			<ReCAPTCHA
+				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
+				size={isMobile ? 'compact' : 'normal'}
+				sitekey={import.meta.env.VITE_SITE_KEY}
+				ref={refCaptcha}
+			/>
+			<div className={`${isMobile ? 'h-12' : 'h-10 mt-1'} flex items-center justify-center`}>
+				<p className='text-[#ef4444] text-lg font-bold text-center'>{recaptchaErrorValue}</p>
+			</div>
+		</div>
+	);
+};
+
+export const FormSubmit = ({ isLoading, buttonText }) => {
+	return (
+		<div className='flex justify-center items-center h-28 mt-2'>
+			{isLoading ? (
+				<Loader />
+			) : (
+				<button
+					type='submit'
+					className='flex justify-center bg-[#b91c1c] p-3 w-32 rounded-full hover:bg-[#7f1d1d] transition duration-300 text-white'>
+					{buttonText}
+				</button>
+			)}
 		</div>
 	);
 };
