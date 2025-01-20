@@ -42,7 +42,7 @@ const TechStack = () => {
 						/>
 					</div>
 				</div>
-				<p className='pt-6 text-white z-10'>* but I use many more!</p>
+				<p className='pt-6 text-white z-10'>* this is just the tip of the iceberg..</p>
 				<div className='w-[90%] h-[1px] bg-gray-400 mt-20' />
 			</div>
 		</div>
