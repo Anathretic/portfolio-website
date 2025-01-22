@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 export const NavbarHashItem = ({ title, section, classProps, onClick, ...linkProps }) => {
 	return (
-		<li className={`mx-2 mf:mx-4 hover:text-red-500 transition duration-300 ${classProps} uppercase z-10`}>
+		<li className={`mx-2 mf:mx-4 mf:hover:text-red-500 transition duration-300 ${classProps} uppercase z-10`}>
 			<HashLink className='p-2' to={section} onClick={onClick} {...linkProps}>
 				{title}
 			</HashLink>
@@ -13,7 +13,7 @@ export const NavbarHashItem = ({ title, section, classProps, onClick, ...linkPro
 
 export const NavbarAnchorItem = ({ title, section, classProps, onClick, ...linkProps }) => {
 	return (
-		<li className={`mx-2 mf:mx-4 hover:text-red-500 transition duration-300 ${classProps} uppercase z-10`}>
+		<li className={`mx-2 mf:mx-4 mf:hover:text-red-500 transition duration-300 ${classProps} uppercase z-10`}>
 			<NavLink className='p-2' to={section} onClick={onClick} {...linkProps}>
 				{title}
 			</NavLink>

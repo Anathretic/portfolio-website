@@ -84,7 +84,7 @@ const Navbar = () => {
 									/>
 									<li>
 										<a
-											className='p-1 hover:text-red-500 transition duration-300'
+											className='p-1 mf:hover:text-red-500 transition duration-300'
 											href='https://www.linkedin.com/in/konrad-wojtylo'
 											target='_blank'
 											rel='noreferrer'>
