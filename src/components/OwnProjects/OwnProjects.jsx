@@ -31,7 +31,7 @@ const OwnProjects = () => {
 				<FaFishFins className='absolute right-0 bottom-10 z-10' color='#83838398' fontSize={32} />
 				<FaFish className='absolute right-10 top-20 z-10' color='#83838398' fontSize={42} />
 			</div>
-			<div className='w-[90%] h-[1px] bg-gray-400 mt-24' />
+			<div className='w-[90%] max-w-[1672px] h-[1px] bg-gray-400 mt-24' />
 		</div>
 	);
 };
