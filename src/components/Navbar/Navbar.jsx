@@ -44,8 +44,8 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<header className={`fixed w-full z-50 transition duration-300 ${isScrolled ? 'bg-[#141d3bf6]' : 'bg-transparent'}`}>
-			<div className='w-full h-[80px] flex md:justify-center justify-between items-center p-4 tracking-[2px]'>
+		<header className={`fixed w-full flex justify-center z-50 transition duration-300 ${isScrolled ? 'bg-[#141d3bf6]' : 'bg-transparent'}`}>
+			<div className='w-full h-[80px] flex xl:w-[90%] max-w-[1710px] justify-between items-center p-5 tracking-[2px]'>
 				<div className='md:flex-[0.8] 2xl:flex-[0.5] flex-initial justify-center items-center'>
 					<div className='flex'>
 						<img src='/logo.svg' alt='Logo that refreshes the page' className='mr-1' />
