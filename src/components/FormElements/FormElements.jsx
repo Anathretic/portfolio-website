@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Loader } from '../OtherComponents/Loader';
 
@@ -35,7 +36,9 @@ export const FormTextarea = ({ label, htmlFor, onChange, errorMessage, ...textar
 	);
 };
 
-export const FormReCaptchaV2 = ({ isMobile, refCaptcha, recaptchaErrorValue }) => {
+export const FormReCaptchaV2 = ({ refCaptcha, recaptchaErrorValue }) => {
+	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
+
 	return (
 		<div className={`${isMobile ? 'h-48 mt-3' : 'h-32 mt-6'} md:ml-0.5 ml-1.5`}>
 			<ReCAPTCHA

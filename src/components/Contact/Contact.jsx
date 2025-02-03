@@ -1,14 +1,6 @@
-import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { ContactForm } from './components/ContactForm';
 
 const Contact = () => {
-	const [focused, setFocused] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
-	const [recaptchaErrorValue, setRecaptchaErrorValue] = useState('');
-
-	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
-
 	return (
 		<div id='contact' className='flex w-full justify-center items-center'>
 			<div className='flex flex-col items-center justify-between px-4 w-full'>
@@ -20,15 +12,7 @@ const Contact = () => {
 					</div>
 				</div>
 				<div className='flex flex-col flex-1 items-center justify-start w-full'>
-					<ContactForm
-						focused={focused}
-						setFocused={setFocused}
-						isLoading={isLoading}
-						setIsLoading={setIsLoading}
-						recaptchaErrorValue={recaptchaErrorValue}
-						setRecaptchaErrorValue={setRecaptchaErrorValue}
-						isMobile={isMobile}
-					/>
+					<ContactForm />
 				</div>
 			</div>
 		</div>
