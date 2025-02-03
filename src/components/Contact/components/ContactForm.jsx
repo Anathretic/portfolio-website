@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FormInput, FormReCaptchaV2, FormSubmit, FormTextarea } from '../../FormElements/FormElements';
 import {
@@ -10,15 +10,11 @@ import { useContactFormInputs } from '../../../hooks/useContactFormInputs';
 import { BsCheck2All } from 'react-icons/bs';
 import { FaDisease } from 'react-icons/fa6';
 
-export const ContactForm = ({
-	focused,
-	setFocused,
-	isLoading,
-	setIsLoading,
-	recaptchaErrorValue,
-	setRecaptchaErrorValue,
-	isMobile,
-}) => {
+export const ContactForm = () => {
+	const [focused, setFocused] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [recaptchaErrorValue, setRecaptchaErrorValue] = useState('');
+
 	const [values, setValues, handleInputValue] = useContactFormInputs();
 	const [buttonText, setButtonText] = useContactFormButton();
 
@@ -97,7 +93,7 @@ export const ContactForm = ({
 					focused={focused.toString()}
 				/>
 			))}
-			<FormReCaptchaV2 isMobile={isMobile} refCaptcha={refCaptcha} recaptchaErrorValue={recaptchaErrorValue} />
+			<FormReCaptchaV2 refCaptcha={refCaptcha} recaptchaErrorValue={recaptchaErrorValue} />
 			<div className='h-[1px] w-full bg-gray-400' />
 			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
 			<FaDisease className='absolute bottom-[-3rem] right-0 md:right-[-3rem]' fontSize={100} color='#83838382' />
