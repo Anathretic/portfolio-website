@@ -28,12 +28,12 @@ const App = () => {
 						<Route
 							path='/'
 							element={
-								<>
+								<main>
 									<Welcome />
 									<TechStack />
 									<OwnProjects />
 									<Contact />
-								</>
+								</main>
 							}
 						/>
 						<Route path='/privacy-policy' element={<PrivacyPolicy />} />

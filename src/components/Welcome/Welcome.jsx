@@ -7,7 +7,7 @@ const Welcome = () => {
 	const { data, isLoading, isError } = useCardsQuery();
 
 	return (
-		<div className='flex w-full justify-center items-center pt-[80px]'>
+		<section className='flex w-full justify-center items-center pt-[80px]'>
 			<div className='flex mf:flex-row flex-col items-center mf:items-start justify-between md:p-20 py-12 px-4'>
 				<div className='relative flex flex-1 justify-center items-center flex-col mf:mr-20 mf:py-16'>
 					<h1 className='w-full text-4xl sm:text-5xl text-white text-gradient py-1 text-center mf:text-left'>
@@ -64,7 +64,7 @@ const Welcome = () => {
 					)}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

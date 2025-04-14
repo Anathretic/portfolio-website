@@ -5,7 +5,7 @@ import { FaOtter, FaDisease } from 'react-icons/fa6';
 
 const TechStack = () => {
 	return (
-		<div id='tech-stack' className='flex flex-col w-full justify-center items-center'>
+		<section id='tech-stack' className='flex flex-col w-full justify-center items-center'>
 			<div className='flex-1 flex flex-col w-full justify-start items-center'>
 				<div className='w-[90%] max-w-[1672px] h-[1px] bg-gray-400' />
 				<div className='flex flex-col items-center justify-between md:p-20 md:pb-16 py-12 px-4'>
@@ -45,7 +45,7 @@ const TechStack = () => {
 				<p className='pt-6 text-white z-10'>* this is just the tip of the iceberg..</p>
 				<div className='w-[90%] max-w-[1672px] h-[1px] bg-gray-400 mt-20' />
 			</div>
-		</div>
+		</section>
 	);
 };
 
