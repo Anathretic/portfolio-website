@@ -2,7 +2,7 @@ import { ContactForm } from './components/ContactForm';
 
 const Contact = () => {
 	return (
-		<div id='contact' className='flex w-full justify-center items-center'>
+		<section id='contact' className='flex w-full justify-center items-center'>
 			<div className='flex flex-col items-center justify-between px-4 w-full'>
 				<div className='flex flex-col items-center justify-between md:p-20 py-12 px-4'>
 					<div className='flex-1 flex flex-col justify-start items-start'>
@@ -15,7 +15,7 @@ const Contact = () => {
 					<ContactForm />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
