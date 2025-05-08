@@ -9,6 +9,7 @@ import {
 	PrivacyPolicy,
 	PageNotFound,
 	CookieBanner,
+	HomeWrapper,
 } from './components';
 
 const App = () => {
@@ -28,12 +29,12 @@ const App = () => {
 						<Route
 							path='/'
 							element={
-								<main>
+								<HomeWrapper>
 									<Welcome />
 									<TechStack />
 									<OwnProjects />
 									<Contact />
-								</main>
+								</HomeWrapper>
 							}
 						/>
 						<Route path='/privacy-policy' element={<PrivacyPolicy />} />
