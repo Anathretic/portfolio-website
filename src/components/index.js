@@ -7,3 +7,4 @@ export { default as Contact } from './Contact/Contact';
 export { default as PrivacyPolicy } from './PrivacyPolicy/PrivacyPolicy';
 export { default as PageNotFound } from './PageNotFound/PageNotFound';
 export { default as CookieBanner } from './OtherComponents/CookieBanner';
+export { default as HomeWrapper } from './HomeWrapper/HomeWrapper';
