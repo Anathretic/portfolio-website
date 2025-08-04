@@ -27,6 +27,6 @@ The code is refactored and divided into components and custom hooks.
 
 **Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/), [Supabase](https://supabase.com/)
 
-**URL:** [Portfolio Page](https://konrad-wojtylo.com/)
+**URL:** coming soon!
 
 _This project is closed-source and proprietary. See the LICENSE file for more information._
